@@ -11,6 +11,7 @@ gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
 
 gem "bootsnap", ">= 1.1.0", require: false
 
@@ -32,3 +33,29 @@ group :test do
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "devise", "~> 4.7", ">= 4.7.1"
+
+# Authenticate social
+gem "omniauth-facebook", "~> 8.0"
+
+# Render error
+gem "simple_form"
+
+# ENV
+gem "figaro"
+
+# Editor
+gem "ckeditor"
+gem "mini_magick"
+
+# search
+gem "ransack"
+
+# Paginate
+gem "kaminari"
+gem "bootstrap-kaminari-views"
+
+# Support
+gem "config"
+gem "lazyload-rails"

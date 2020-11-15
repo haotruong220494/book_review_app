@@ -1,0 +1,132 @@
+.alert p {
+  margin-bottom: 0;
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  .box-left {
+    width: 50%;
+    background: #f5f5f5;
+  }
+  .box-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #212121;
+  }
+  .img-logo-unauthen {
+    display: flex;
+    align-items: center;
+    img {
+      width: 150px;
+      border-radius: 50%;
+      position: absolute;
+      left: 46%;
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.haotruong-form-login {
+  width: 300px;
+  .group-input {
+    margin-top: 42px;
+    .form-group:first-child {
+      margin-bottom: 18px;
+    }
+    label {
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+    input {
+      margin-bottom: 0;
+      padding-left: 12px;
+      font-size: 14px;
+      width: 100%;
+      border-radius: 5px;
+      background: #dee8f0;
+      height: 40px;
+      border: none;
+      border-bottom: 2px solid #565d6b;
+      outline: none;
+    }
+  }
+  input[type='submit'] {
+    margin-top: 14px;
+    width: 100%;
+    padding: 0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    background: #575e6c;
+    outline: none;
+  }
+  .img-form-login {
+    text-align: center;
+    img {
+      width: 250px;
+      border-radius: 10%;
+    }
+  }
+}
+
+.modal-dialog-centered {
+  width: 335px;
+  margin: auto;
+}
+
+@media(max-width: 1024px) {
+  .login-page {
+    .img-logo-unauthen img {
+      left: 42.5%;
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .login-page {
+    .box-left {
+      display: none;
+    }
+    .box-right {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      background: image-url('login-background.png');
+      background-repeat: no-repeat;
+      align-items: center;
+      margin-top: 0 !important;
+    }
+    .img-logo-unauthen img {
+      left: 41%;
+    }
+  }
+  .haotruong-form-login .group-input label {
+    color: #fff;
+  }
+}
+
+@media(max-width: 414px) {
+  .login-page {
+    .img-logo-unauthen img {
+      left: 32%;
+    }
+  }
+}
+
+@media(max-width: 375px) {
+  .login-page {
+    .img-logo-unauthen img {
+      left: 30%;
+    }
+  }
+}
