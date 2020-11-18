@@ -61,6 +61,18 @@ label.required:after {
   display: flex;
 }
 
-.image-cover img{
+.image-cover {
+  padding: 0;
+}
+
+.image-cover img {
   width: 100px;
+}
+
+.custom-file {
+  height: auto;
+}
+
+.custom-file .row {
+  padding: 0 15px;
 }

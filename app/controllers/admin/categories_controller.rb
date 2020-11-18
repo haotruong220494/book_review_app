@@ -38,12 +38,17 @@ class Admin::CategoriesController < Admin::BaseController
     redirect_to admin_categories_path
   end
 
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge_later
+    redirect_back(fallback_location: request.referer)
+  end
   private
   def load_category
     @category = Category.find_by_id(params[:id].delete("^0-9").to_i)
   end
 
   def params_category
-    params.require(:category).permit(:title, :slug, :image)
+    params.require(:category).permit(:title, :slug, :description, :image)
   end
 end

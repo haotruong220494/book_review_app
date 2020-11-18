@@ -1,6 +1,12 @@
 <tr>
-  <td style="width: 30%"></i><%= category.title %></td>
-  <td style="width: 20%"></i><%= category.slug %></td>
+  <td style="width: 15%"></i><%= category.title %></td>
+  <td style="width: 15%"></i><%= category.slug %></td>
+  <td style="width: 30%"></i><%= truncate(category.description, length: 45, omission: '... (continued)') %></td>
+  <td style="width: 20%;">
+    <% if category.image.attached? %>
+      <img style="width: 100px" src="<%= url_for(category.image) %>" alt="">
+    <% end %>
+  </td>
   <td class="action-article">
     <%= link_to edit_admin_category_path(category) do %>
       <%= content_tag :i, "", class: "far fa-edit text-info" %>
