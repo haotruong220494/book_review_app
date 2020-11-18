@@ -17,6 +17,8 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "pry-byebug"
+  gem "pry-rails"
 end
 
 group :development do
@@ -67,3 +69,5 @@ gem "bootstrap-kaminari-views"
 # Support
 gem "config"
 gem "lazyload-rails"
+
+gem "aws-sdk-s3", "~> 1"

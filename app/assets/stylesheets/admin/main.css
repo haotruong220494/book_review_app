@@ -60,3 +60,7 @@ label.required:after {
   color: green;
   display: flex;
 }
+
+.image-cover img{
+  width: 100px;
+}
