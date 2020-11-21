@@ -1,2 +1,74 @@
-<%= @category.title %>
-<img src="<%= url_for(@category.image) %>" alt="">
+<div class="bg-img-hero" style="background-image: url(<%= asset_path '1920600img2.jpg' %>); height: 600px;">
+  <div class="container px-md-5">
+    <div class="space-top-5">
+      <div class="pt-6">
+        <h6 class="display-9 text-lh-1dot3 max-w-500 mb-1">
+          <a href="#" class="text-white"><%= @category.title %></a>
+        </h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="blog-post mb-7 mb-xl-11">
+  <div class="container px-md-5">
+    <div class="mx-md-1">
+      <div class="row mb-5 mt-n7">
+        <div class="col-md-6 col-lg-3">
+          <div class="mb-5 mb-lg-0">
+            <a class="d-block mb-3" href="">
+              <img class="img-fluid h-185rem" src="<%= asset_path("248185img1.jpg") %>" alt="Image-Description" />
+            </a>
+            <div class="text-center">
+              <a class="font-size-13 font-weight-bold" href="">Movie News</a>
+              <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
+                <a href="">Emmy 2020: “Game of Throne” featured having 22 nominee</a>
+              </h6>
+              <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="">January 30, 2020</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="mb-5 mb-lg-0">
+            <a class="d-block mb-3" href="">
+              <img class="img-fluid h-185rem" src="<%= asset_path("248185img2.jpg") %>" alt="Image-Description" />
+            </a>
+            <div class="text-center">
+              <a class="font-size-13 font-weight-bold" href="">Reviews</a>
+              <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
+                <a href="">The 6 Best Hard Movies That Aren't Not Actually Hard</a>
+              </h6>
+              <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="">January 30, 2020</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="mb-5 mb-lg-0">
+            <a class="d-block mb-3" href="">
+              <img class="img-fluid h-185rem" src="<%= asset_path("248185img3.jpg") %>" alt="Image-Description" />
+            </a>
+            <div class="text-center">
+              <a class="font-size-13 font-weight-bold" href="">Tv Series</a>
+              <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
+                <a href="">Why Announcing Bad Never Let Walt Try His Blue Meth</a>
+              </h6>
+              <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="">January 30, 2020</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <a class="d-block mb-3" href="">
+            <img class="img-fluid h-185rem" src="<%= asset_path("248185img4.jpg") %>" alt="Image-Description" />
+          </a>
+          <div class="text-center">
+            <a class="font-size-13 font-weight-bold" href="">Movie Trailers</a>
+            <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
+              <a href="">Galaxy Wars: XII Is Bringing BackWilliams as Anne Trailer #2</a>
+            </h6>
+            <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="">January 30, 2020</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

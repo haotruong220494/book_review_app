@@ -21,7 +21,9 @@
 </head>
 <body>
   <%= render "layouts/client/header" %>
-  <%= yield %>
+  <main id="content">
+    <%= yield %>
+  </main>
   <%= render "layouts/client/footer" %>
   <a
     class="js-go-to go-to position-fixed"

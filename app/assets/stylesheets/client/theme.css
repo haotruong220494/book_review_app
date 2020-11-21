@@ -16,4 +16,7 @@
   .logo, .logo-footer {
     font-size: 22px;
   }
+  .space-5, .space-bottom-5.space-5, .space-bottom-5 {
+  	padding-bottom: 0 !important;
+  }
 }
