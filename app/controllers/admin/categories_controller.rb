@@ -43,12 +43,13 @@ class Admin::CategoriesController < Admin::BaseController
     @image.purge_later
     redirect_back(fallback_location: request.referer)
   end
+
   private
   def load_category
     @category = Category.find_by_id(params[:id].delete("^0-9").to_i)
   end
 
   def params_category
-    params.require(:category).permit(:title, :slug, :description, :image)
+    params.require(:category).permit Category::ATTRS
   end
 end

@@ -1,6 +1,9 @@
 class Category < ApplicationRecord
+  ATTRS = [:title, :slug, :description, :image, :banner_cover]
   has_one :image
+  has_one :banner_cover
   has_one_attached :image
+  has_one_attached :banner_cover
 
   validates :title, presence: true
   before_save :to_slug

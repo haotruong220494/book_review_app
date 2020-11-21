@@ -4,7 +4,7 @@
       <div class="modal-body">
        <div class="haotruong-form-login">
         <div class="img-form-login">
-          <%= image_tag("logo.png") %>
+          <img src="<%= asset_path("logo.png") %>" alt="logo">
         </div>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="group-input">
