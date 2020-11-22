@@ -7,6 +7,7 @@
       <img style="width: 100px" src="<%= url_for(category.image) %>" alt="">
     <% end %>
   </td>
+  <td style="width: 10%;"><%= category.location %></td>
   <td class="action-article">
     <%= link_to edit_admin_category_path(category) do %>
       <%= content_tag :i, "", class: "far fa-edit text-info" %>

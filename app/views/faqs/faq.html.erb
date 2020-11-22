@@ -1,0 +1,156 @@
+<%= provide :title, "FAQ" %>
+<div class="bg-img-hero" style="background-image: url('<%= asset_path("1920600img2.jpg")%>'); height: 315px;">
+  <div class="container px-md-5">
+    <div class="space-top-3">
+      <div class="pt-6">
+        <h6 class="display-9 text-lh-1dot3 max-w-500 mb-1 border-bottom border-gray-3200">
+          <p class="text-white">FAQ</p>    
+        </h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container px-md-5 pb-lg-6 mt-6">
+  <div class="row">
+  	<div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <div class="pl-lg-5 ml-lg-1">
+        <h5 class="font-size-18 font-weight-medium mb-4"><i class="far fa-question-circle"></i> Giúp bạn giải đáp những thắc mắc</h5>
+        <div class="mb-5 mb-lg-8">
+          <div id="basicsAccordion">
+            <div class="mb-2">
+              <div class="card-collapse v1" id="basicsHeadingOne">
+                <button type="button" class="d-flex align-items-center btn btn-link btn-block card-btn p-0 collapsed" data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="false" aria-controls="basicsCollapseOne">
+                  <span class="card-btn-toggle">
+                    <span class="card-btn-toggle-default">+</span>
+                    <span class="card-btn-toggle-active">−</span>
+                  </span>
+                  <span class="text-primary font-size-1 font-secondary font-weight-medium ml-1">kenhdoc.com là ai?</span>
+                </button>
+              </div>
+              <div id="basicsCollapseOne" class="collapse" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion" style="">
+                <div class="card-body pl-4 pt-2 mt-1 pb-2">
+                  <a class="h-g-secondary" href="<%= about_us_path %>"><i class="fas fa-link"></i> bài viết giới thiệu về kênh đọc</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <div class="card-collapse v1" id="basicsHeadingTwo">
+                <button type="button" class="d-flex align-items-center btn btn-link btn-block card-btn p-0 collapsed" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
+                  <span class="card-btn-toggle">
+                    <span class="card-btn-toggle-default">+</span>
+                    <span class="card-btn-toggle-active">−</span>
+                  </span>
+                  <span class="text-primary font-size-1 font-secondary font-weight-medium ml-1">Tôi nhận được gì khi viết review và gửi cho kenhdoc.com?</span>
+                </button>
+              </div>
+              <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo" data-parent="#basicsAccordion" style="">
+                <ul class="card-body pl-4 pt-2 mt-1 pb-2">
+                 	<li> 
+                 		<span>Với mỗi bài review chất lượng và được kiểm duyệt, mình xin gửi bạn 1 phần tiền nhỏ gọi là chút tấm lòng gửi bạn ly cafe.</span>
+									</li>
+                 	<li>
+                 		<span>Với mỗi bài review được đăng tải lên website, mình sẽ để bút danh của bạn ở cuối bài và đôi lời giới thiệu về bản thân các bạn, để mọi người có thể nhìn thấy được sự lan tỏa những điều tuyệt vời từ bạn.</span>
+                 	</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <div class="card-collapse v1" id="basicsHeadingThree">
+                <button type="button" class="d-flex align-items-center btn btn-link btn-block card-btn p-0 collapsed" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
+                  <span class="card-btn-toggle">
+                    <span class="card-btn-toggle-default">+</span>
+                    <span class="card-btn-toggle-active">−</span>
+                  </span>
+                  <span class="text-primary font-size-1 font-secondary font-weight-medium ml-1">Tôi cần lưu ý điều gì khi gửi bài cho kenhdoc.com?</span>
+                </button>
+              </div>
+              <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree" data-parent="#basicsAccordion" style="">
+                <ul class="card-body pl-4 pt-2 mt-1 pb-2">
+                  <li>
+                  	<span>
+                  	Tuyệt đối không copy content từ các website khác, mình sẽ ko duyệt bất cứ bài viết nào và gỡ bài viết khi phát hiện được copy từ 1 website hoặc 1 nguồn khác mà ko phải của bạn. Chúng ta hãy cùng nhau tôn trọng bản quyền và tôn trọng thành quả của người khác.
+	                  </span>
+	                </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <div class="card-collapse v1" id="basicsHeadingFour">
+                <button type="button" class="d-flex align-items-center btn btn-link btn-block card-btn p-0 collapsed" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
+                  <span class="card-btn-toggle">
+                    <span class="card-btn-toggle-default">+</span>
+                    <span class="card-btn-toggle-active">−</span>
+                  </span>
+                  <span class="text-primary font-size-1 font-secondary font-weight-medium ml-1">Bài viết sẽ được duyệt nhanh khi có những yếu tố nào?</span>
+                </button>
+              </div>
+              <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion" style="">
+                <ul class="card-body pl-4 pt-2 mt-1 pb-2">
+                 	<li>
+                 		<span>Bài viết có lớn hơn 1000 ký tự ít bị lặp văn, có mô tả ngắn về cuốn sách, có đính kèm 3 ảnh về cuốn sách trong bài viết, khuyến khích các bạn chụp sách có background đẹp và sáng tạo :)))</span>
+                 	</li>
+                 	<li>
+                 		<span>Bài viết về những cuốn sách mới phát hành</span>
+                 	</li>
+                 	<li>
+                 		<span>Bài viết phải là những cuốn sách mang lại được giá trị cho chính bản thân bạn trước và sau đó là cho đọc giả.</span>
+                 	</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <div class="card-collapse v1" id="basicsHeadingFive">
+                <button type="button" class="d-flex align-items-center btn btn-link btn-block card-btn p-0 collapsed" data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
+                  <span class="card-btn-toggle">
+                    <span class="card-btn-toggle-default">+</span>
+                    <span class="card-btn-toggle-active">−</span>
+                  </span>
+                  <span class="text-primary font-size-1 font-secondary font-weight-medium ml-1">Tôi có thể gửi bài viết của mình đến kenhdoc.com như thế nafo?</span>
+                </button>
+              </div>
+              <div id="basicsCollapseFive" class="collapse" aria-labelledby="basicsHeadingFive" data-parent="#basicsAccordion" style="">
+                <ul class="card-body pl-4 pt-2 mt-1 pb-2">
+                  <li>
+                  	<span>
+                  		bạn có thể gửi qua mail cho mình theo địa chỉ: <b>bookreview.kenhdoc@gmail.com</b> theo format:
+                      <br>
+                      + Tên cuốn sách_Tên bạn<br>
+											+ File content lưu ở dạng ms word (.doc or .docx)<br>
+											+ File ảnh lưu ở dạng nén (.zip or .rar)<br>
+                  	</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mb-0">
+              <div class="card-collapse v1" id="basicsHeadingSix">
+                <button type="button" class="d-flex align-items-center btn btn-link btn-block card-btn p-0 collapsed" data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
+                  <span class="card-btn-toggle">
+                    <span class="card-btn-toggle-default">+</span>
+                    <span class="card-btn-toggle-active">−</span>
+                  </span>
+                  <span class="text-primary font-size-1 font-secondary font-weight-medium ml-1">Nếu bài viết của tôi không được duyệt?</span>
+                </button>
+              </div>
+              <div id="basicsCollapseSix" class="collapse" aria-labelledby="basicsHeadingSix" data-parent="#basicsAccordion" style="">
+                <ul class="card-body pl-4 pt-2 mt-1 pb-2">
+                 	<li>
+                 		<span>Dù bài viết của bạn được duyệt hay không được duyệt thì mình cũng sẽ cố gắng phản hồi sớm nhất có thể cho bạn, trong vòng không quá 3 ngày.</span>
+                 	</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>

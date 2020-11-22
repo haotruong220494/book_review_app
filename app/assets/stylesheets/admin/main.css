@@ -40,6 +40,20 @@ label.required:after {
 }
 .pagination {
   justify-content: center;
+  background: #f4f6f9;
+  padding-bottom: 20px;
+}
+.pagination li.active {
+  background: #f4f6f9;
+  background: #343a40;
+  color: #fff;
+  border-radius: 4px;
+}
+.pagination a {
+  color: #000;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
 }
 
 #post_category_id {

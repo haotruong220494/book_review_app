@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  ATTRS = [:title, :slug, :description, :image, :banner_cover]
+  ATTRS = [:title, :slug, :description, :image, :banner_cover, :location]
   has_one :image
   has_one :banner_cover
   has_one_attached :image
@@ -7,6 +7,8 @@ class Category < ApplicationRecord
 
   validates :title, presence: true
   before_save :to_slug
+
+  scope :cate_show_header, -> { where location: "header" }
 
   def to_param
     "#{to_slug}#{id}"
