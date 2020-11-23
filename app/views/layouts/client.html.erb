@@ -18,8 +18,17 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script
+    async
+    defer
+    crossorigin="anonymous"
+    src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=784199625460848&autoLogAppEvents=1"
+    nonce="TWOMULKl">
+  </script>
   <%= render "layouts/client/header" %>
   <main id="content">
     <%= yield %>

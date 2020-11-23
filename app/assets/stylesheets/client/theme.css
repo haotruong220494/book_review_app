@@ -10,6 +10,10 @@
 #basicsAccordion ul li {
 	margin-bottom: 4px;
 }
+.avatar-about-us {
+  display: flex;
+  align-items: center;
+}
 @media screen and (max-width: 767px) {
   .slick-arrow-right {
     right: 30px !important;

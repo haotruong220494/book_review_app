@@ -1,1 +1,47 @@
 <%= provide :title, "Giới thiệu" %>
+<%= content_for :breadcum_first, "Trang chủ" %>
+<%= content_for :breadcum_first_link, root_path %>
+<%= content_for :breadcum_second, "Giới thiệu" %>
+
+<div class="bg-img-hero" style="background-image: url('<%= asset_path("banner-about-us.jpg")%>'); height: 315px;"></div>
+<div class="container px-md-5 pb-lg-6">
+  <%= render "layouts/breadcrumb"%>
+  <div class="row">
+    <div class="col-lg-9 mt-2">
+      <div class="ml-lg-1">
+        <div class="mb-5 mb-lg-8">
+          <div class="row">
+            <div class="col-lg-2 mb-2 avatar-about-us">
+              <img src="<%= asset_path("avatar.HEIC") %>" alt="">
+            </div>
+            <div class="col-lg-10 mb-2">
+              <p>Xin chào các bạn !</p>
+              <p></p>
+              <p>Mình xin tự giới thiệu mình là Hảo Trương - quản trị viên của kenhdoc.com, một chàng trai IT với sở thích đọc sách ngôn tình và trinh thám.</p>
+              <p></p>
+              <p>kenhdoc.com được mình tạo ra từ chính sự đam mê với nghề và sở thích với những câu quote ngôn tình đi ra từ những cuốn sách, hòa lẫn là vài tình tiết ma mị và đầy cuốn hút từ những cuốn trinh thám.</p>
+              <p></p>
+              <p>Mình hướng kenhdoc.com như một mạng xã hội thu nhỏ về review sách, góp 1 phần nhỏ bé vào công cuộc thay đổi thói quen đọc sách của giới trẻ hiện nay, cũng như giúp những bạn có thời gian ít ỏi mà ko biết tìm ở đâu những cuốn sách hay. thì kênh đọc là 1 trong những nơi review có tâm và tin tưởng để các bạn chọn sách.</p>
+              <p></p>
+              <p><b><i>"Chỉ review những cuốn sách được bạn đọc đánh giá cao, hay và mang lại nhiều giá trị."</i></b></p>
+              <p></p>
+              <p>Mong  được sự đón nhận và góp ý từ các bạn.</p>
+              <p>Cảm ơn bạn đã ghé thăm.</p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 mt-2">
+      <div class="ml-lg-1">
+        <p>Like page để nhận thông báo khi có bài viết mới và biết đâu đó là cuốn sách thay đổi cuộc đời bạn.</p>
+        <div class="fb-page"
+          data-href="https://www.facebook.com/bookreview.kenhdoc"
+          data-hide-cover="false"
+          data-show-facepile="false" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
