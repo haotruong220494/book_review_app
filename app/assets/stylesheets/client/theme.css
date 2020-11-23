@@ -31,3 +31,15 @@
   	padding-bottom: 0 !important;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .logo, .logo-footer {
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .logo, .logo-footer {
+    font-size: 19px;
+  }
+}
