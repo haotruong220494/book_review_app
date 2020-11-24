@@ -1,4 +1,6 @@
 $(function(){
+  window.location.hash = ""
+
 	$("img.lazy-load, .product-image img.lazy-load").lazyload({
     event: "scroll.lazyload",
     effect: "fadeIn",

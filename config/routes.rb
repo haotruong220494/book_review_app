@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :accounts, controllers: {omniauth_callbacks: "accounts/omniauth_callbacks"}
+  resources :accounts, only: :show
   root "client#home"
   resources :categories, only: :show, param: :slug
 
