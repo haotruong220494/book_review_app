@@ -1,0 +1,55 @@
+class Admin::PostsController < Admin::BaseController
+  before_action :load_post, only: [:edit, :update]
+
+  def index
+    @q = Post.ransack params[:q]
+    @posts = @q.result.page(params[:page]).per Settings.per_page.default
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new params_post
+    if @post.save
+      flash[:success] = "Create post success!"
+      redirect_to admin_posts_path
+    else
+      render "new"
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @post.update_attributes params_post
+      flash[:success] = "Update post success!"
+      redirect_to admin_posts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    Post.find_by(id: params[:id]).destroy
+    flash[:success] = "Delete Post Success."
+    redirect_to admin_posts_path
+  end
+
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge_later
+    redirect_back(fallback_location: request.referer)
+  end
+
+  private
+  def load_post
+    @post = Post.find_by_id(params[:id].delete("^0-9").to_i)
+  end
+
+  def params_post
+    params.require(:post).permit Post::ATTRS
+  end
+end
