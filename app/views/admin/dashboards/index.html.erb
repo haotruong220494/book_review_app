@@ -86,7 +86,7 @@
                   <%= link_to admin_account_path(account), class: "users-list-name" do %>
                     <%= account.name %>
                   <% end %>
-                  <span class="users-list-date"><%= account.created_at %></span>
+                  <span class="users-list-date"><%= account.created_at.strftime(Settings.time.formats) %></span>
                 </li>
               <% end %>
             </ul>

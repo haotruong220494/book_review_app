@@ -19,9 +19,10 @@ Rails.application.routes.draw do
 
   devise_for :accounts, controllers: {omniauth_callbacks: "accounts/omniauth_callbacks"}
   resources :accounts, only: :show
-  root "client#home"
   resources :categories, only: :show, param: :slug
+  resources :posts
 
+  root "client#home"
   get "/faq", to: "faqs#faq"
   get "/about-us", to: "abouts#about_us"
   match "/404", to: "errors#file_not_found", via: :all

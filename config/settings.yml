@@ -2,4 +2,6 @@ per_page:
   default: 6
   client: 8
 date:
-  formats: "%d-%m"
+  formats: "%d/%m/%Y"
+time:
+  formats: "%Y/%m/%d %H:%M"

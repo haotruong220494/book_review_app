@@ -5,11 +5,11 @@
     <div class="space-top-3">
       <div class="pt-6">
         <h6 class="display-9 text-lh-1dot3 max-w-500 mb-1 border-bottom border-gray-3200">
-          <p class="text-white"><%= @category.title %></p>    
+          <p class="text-white"><%= @category.title %></p>
         </h6>
         <div class="text-lh-1dot3 max-w-500 mb-1">
           <span class="text-white font-size-15 font-weight-semi-bold font-secondary text-lh-lg"><%= @category.description %></span>
-        </div>  
+        </div>
       </div>
     </div>
   </div>
@@ -19,60 +19,24 @@
   <div class="container px-md-5">
     <div class="mx-md-1">
       <div class="row mb-5 mt-n7">
-        <div class="col-md-6 col-lg-3">
-          <div class="mb-5 mb-lg-0">
-            <a class="d-block mb-3" href="">
-              <img class="img-fluid h-185rem" src="<%= asset_path("248185img1.jpg") %>" alt="Image-Description" />
-            </a>
-            <div class="text-center">
-              <a class="font-size-13 font-weight-bold" href="">Movie News</a>
-              <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
-                <a href="">Emmy 2020: “Game of Throne” featured having 22 nominee</a>
-              </h6>
-              <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="">January 30, 2020</a>
+        <% @category.posts.show_post_head.each do |post| %>
+          <div class="col-md-6 col-lg-3">
+            <div class="mb-5 mb-lg-0">
+              <a class="d-block mb-3" href="">
+                <img src="<%= url_for(post.image_cover_cate) %>" class="img-fluid h-185rem lazy-header" alt="image cover <%= post.name %>">
+              </a>
+              <div class="text-center">
+                <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
+                  <%= link_to post_path(post) do %>
+                    <%= post.name %>
+                  <% end %>
+                </h6>
+                <a class="font-size-13 font-weight-bold" href=""><%= post.account.name %></a>
+                <a class="product-comment font-weight-normal font-size-13 font-italic h-g-primary" href=""><%= post.created_at.strftime(Settings.date.formats) %></a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="mb-5 mb-lg-0">
-            <a class="d-block mb-3" href="">
-              <img class="img-fluid h-185rem" src="<%= asset_path("248185img2.jpg") %>" alt="Image-Description" />
-            </a>
-            <div class="text-center">
-              <a class="font-size-13 font-weight-bold" href="">Reviews</a>
-              <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
-                <a href="">The 6 Best Hard Movies That Aren't Not Actually Hard</a>
-              </h6>
-              <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="">January 30, 2020</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="mb-5 mb-lg-0">
-            <a class="d-block mb-3" href="">
-              <img class="img-fluid h-185rem" src="<%= asset_path("248185img3.jpg") %>" alt="Image-Description" />
-            </a>
-            <div class="text-center">
-              <a class="font-size-13 font-weight-bold" href="">Tv Series</a>
-              <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
-                <a href="">Why Announcing Bad Never Let Walt Try His Blue Meth</a>
-              </h6>
-              <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="">January 30, 2020</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <a class="d-block mb-3" href="">
-            <img class="img-fluid h-185rem" src="<%= asset_path("248185img4.jpg") %>" alt="Image-Description" />
-          </a>
-          <div class="text-center">
-            <a class="font-size-13 font-weight-bold" href="">Movie Trailers</a>
-            <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
-              <a href="">Galaxy Wars: XII Is Bringing BackWilliams as Anne Trailer #2</a>
-            </h6>
-            <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="">January 30, 2020</a>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -84,136 +48,39 @@
       <div class="row">
         <div class="col-xl-9">
           <div class="mb-5 mb-xl-0">
-            <div class="row mb-4">
-              <div class="col-lg-6">
-                <a class="d-block mb-3 mb-lg-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                  <img class="img-fluid" src="../../assets/img/370x210/img1.jpg" alt="Image-Description" />
-                </a>
-              </div>
-              <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h6 class="product_title font-size-22 font-secondary font-weight-semi-bold text-lh-1dot3 mb-1 pr-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">The Rock Reveals State Of Feud With Tyron Gibson Franchise – Video Embed</a>
-                </h6>
-                <div class="mb-2 pb-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                    <span>Hot Rumours</span>
-                  </a>
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                    <span>February 6 2020</span>
+            <% @category.posts.show_post_body.each do |post| %>
+              <div class="row mb-4">
+                <div class="col-lg-6">
+                  <a class="d-block mb-3 mb-lg-0" href="">
+                    <%= image_tag(post.image_cover_cate, class: "img-fluid lazy-load", alt: "image cover #{post.name}") %>
                   </a>
                 </div>
-                <p class="font-size-1 mb-0 pr-lg-7">
-                  Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
-                </p>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-lg-6">
-                <a class="d-block mb-3 mb-lg-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                  <img class="img-fluid" src="../../assets/img/370x210/img2.jpg" alt="Image-Description" />
-                </a>
-              </div>
-              <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h6 class="product_title font-size-22 font-secondary font-weight-semi-bold text-lh-1dot3 mb-1 pr-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Purge Maze Halloween</a>
-                </h6>
-                <div class="mb-2 pb-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                    <span>Movies</span>
-                  </a>
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                    <span>February 2 2020</span>
-                  </a>
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                    <span>1 Comment</span>
-                  </a>
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                  <h6 class="product_title font-size-22 font-secondary font-weight-semi-bold text-lh-1dot3 mb-1 pr-1">
+                    <%= link_to post_path(post) do %>
+                      <%= post.name %>
+                    <% end %>
+                  </h6>
+                  <div class="mb-2 pb-1">
+                    <a href="" class="font-weight-bold font-size-13">
+                      <span><%= post.account.name %></span>
+                    </a>
+                    <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                      <span><%= post.created_at.strftime(Settings.date.formats) %></span>
+                    </a>
+                  </div>
+                  <p class="font-size-1 mb-0 pr-lg-7">
+                    <%= post.description %>
+                  </p>
                 </div>
-                <p class="font-size-1 mb-0 pr-lg-7">
-                  Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
-                </p>
               </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-lg-6">
-                <a class="d-block mb-3 mb-lg-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                  <img class="img-fluid" src="../../assets/img/370x210/img2.jpg" alt="Image-Description" />
-                </a>
-              </div>
-              <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h6 class="product_title font-size-22 font-secondary font-weight-semi-bold text-lh-1dot3 mb-1 pr-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Purge Maze Halloween</a>
-                </h6>
-                <div class="mb-2 pb-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                    <span>Movies</span>
-                  </a>
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                    <span>February 2 2020</span>
-                  </a>
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                    <span>1 Comment</span>
-                  </a>
-                </div>
-                <p class="font-size-1 mb-0 pr-lg-7">
-                  Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
-                </p>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-lg-6">
-                <a class="d-block mb-3 mb-lg-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                  <img class="img-fluid" src="../../assets/img/370x210/img2.jpg" alt="Image-Description" />
-                </a>
-              </div>
-              <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h6 class="product_title font-size-22 font-secondary font-weight-semi-bold text-lh-1dot3 mb-1 pr-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Purge Maze Halloween</a>
-                </h6>
-                <div class="mb-2 pb-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                    <span>Movies</span>
-                  </a>
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                    <span>February 2 2020</span>
-                  </a>
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                    <span>1 Comment</span>
-                  </a>
-                </div>
-                <p class="font-size-1 mb-0 pr-lg-7">
-                  Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
-                </p>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-lg-6">
-                <a class="d-block mb-3 mb-lg-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                  <img class="img-fluid" src="../../assets/img/370x210/img3.jpg" alt="Image-Description" />
-                </a>
-              </div>
-              <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h6 class="product_title font-size-22 font-secondary font-weight-semi-bold text-lh-1dot3 mb-1 pr-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Apparently Anthon McCarthy Decided To Star In The Murders Really Quickly</a>
-                </h6>
-                <div class="mb-2 pb-1">
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                    <span>Hot Rumours</span>
-                  </a>
-                  <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                    <span>February 20 2020</span>
-                  </a>
-                </div>
-                <p class="font-size-1 mb-0 pr-lg-7">
-                  Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
-                </p>
-              </div>
-            </div>
+            <% end %>
           </div>
         </div>
         <div class="col-xl-3">
           <div>
             <div class="d-flex align-items-baseline justify-content-between mb-5 pb-1">
-              <h6 class="font-size-24 font-weight-medium font-secondary mb-0">What's hot</h6>
+              <h6 class="font-size-24 font-weight-medium font-secondary mb-0">Bài viết nổi bật</h6>
               <div class="border-top col p-0 mx-2 border-gray-3600"></div>
               <a href="#" class="h-g-primary font-size-1 font-weight-medium font-secondary">VIEW ALL</a>
             </div>
@@ -221,21 +88,21 @@
               <div class="col-lg-6 col-xl-12">
                 <div class="row no-gutters border-bottom mb-4 pb-4">
                   <div class="col-md-4">
-                    <a class="d-flex h-100 mb-3 mb-lg-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                      <img class="img-fluid" src="../../assets/img/88x75/img1.jpg" alt="Image-Description" />
+                    <a class="d-flex h-100 mb-3 mb-lg-0" href="">
+                      <%= image_tag("370210img1.jpg", class: "img-fluid lazy-header") %>
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="ml-md-3">
                       <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Jones apologises Craig for Trump</a>
+                        <a href="">Jones apologises Craig for Trump</a>
                       </h6>
                       <div class="d-flex align-items-center d-xl-block">
                         <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Basketball</a>
+                          <a class="font-size-13 font-weight-bold" href="">Basketball</a>
                         </div>
                         <div>
-                          <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                             <span>October 6 2020</span>
                           </a>
                         </div>
@@ -247,21 +114,21 @@
               <div class="col-lg-6 col-xl-12">
                 <div class="row no-gutters border-bottom mb-4 pb-4">
                   <div class="col-md-4">
-                    <a class="d-flex h-100" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                      <img class="img-fluid" src="../../assets/img/88x75/img2.jpg" alt="Image-Description" />
+                    <a class="d-flex h-100" href="">
+                      <%= image_tag("370210img2.jpg", class: "img-fluid lazy-header") %>
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="ml-md-3">
                       <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Seven uncapped players in NZ</a>
+                        <a href="">Seven uncapped players in NZ</a>
                       </h6>
                       <div class="d-flex align-items-center">
                         <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Views</a>
+                          <a class="font-size-13 font-weight-bold" href="">Views</a>
                         </div>
                         <div>
-                          <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                             <span>October 6 2020</span>
                           </a>
                         </div>
@@ -273,21 +140,21 @@
               <div class="col-lg-6 col-xl-12">
                 <div class="row no-gutters border-bottom mb-4 pb-4">
                   <div class="col-md-4">
-                    <a class="d-flex h-100" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                      <img class="img-fluid" src="../../assets/img/88x75/img3.jpg" alt="Image-Description" />
+                    <a class="d-flex h-100" href="">
+                      <%= image_tag("370210img3.jpg", class: "img-fluid lazy-header") %>
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="ml-md-3">
                       <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Record-setting Griefer or Villain?</a>
+                        <a href="">Record-setting Griefer or Villain?</a>
                       </h6>
                       <div class="d-flex align-items-center">
                         <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Review</a>
+                          <a class="font-size-13 font-weight-bold" href="">Review</a>
                         </div>
                         <div>
-                          <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                             <span>October 6 2020</span>
                           </a>
                         </div>
@@ -299,21 +166,21 @@
               <div class="col-lg-6 col-xl-12">
                 <div class="row no-gutters border-bottom mb-4 pb-4">
                   <div class="col-md-4">
-                    <a class="d-flex h-100" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                      <img class="img-fluid" src="../../assets/img/88x75/img4.jpg" alt="Image-Description" />
+                    <a class="d-flex h-100" href="">
+                      <%= image_tag("370210img1.jpg", class: "img-fluid lazy-header") %>
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="ml-md-3">
                       <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Federer wins Stuttgart title</a>
+                        <a href="">Federer wins Stuttgart title</a>
                       </h6>
                       <div class="d-flex align-items-center">
                         <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">News</a>
+                          <a class="font-size-13 font-weight-bold" href="">News</a>
                         </div>
                         <div>
-                          <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                             <span>October 6 2020</span>
                           </a>
                         </div>
@@ -325,21 +192,21 @@
               <div class="col-lg-6 col-xl-12">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <a class="d-flex h-100" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                      <img class="img-fluid" src="../../assets/img/88x75/img5.jpg" alt="Image-Description" />
+                    <a class="d-flex h-100" href="">
+                      <%= image_tag("370210img2.jpg", class: "img-fluid lazy-header") %>
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="ml-md-3">
                       <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Jones apologises Craig for Trump</a>
+                        <a href="">Jones apologises Craig for Trump</a>
                       </h6>
                       <div class="d-flex align-items-center">
                         <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Soccer</a>
+                          <a class="font-size-13 font-weight-bold" href="">Soccer</a>
                         </div>
                         <div>
-                          <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                             <span>October 6 2020</span>
                           </a>
                         </div>
