@@ -1,3 +1,12 @@
 <% provide :button_text, "Update" %>
 <% provide :form_type, "Form Edit" %>
+
+<%= content_for :breadcum_first, "Home" %>
+<%= content_for :breadcum_first_link, admin_root_path %>
+<%= content_for :breadcum_second, "Posts" %>
+<%= content_for :breadcum_second_link, admin_posts_path %>
+<%= content_for :breadcum_third, @post.name %>
+<%= content_for :sub_breadcum_item, "Edit" %>
+
+<%= render "layouts/breadcrumb_admin"%>
 <%= render "form" %>

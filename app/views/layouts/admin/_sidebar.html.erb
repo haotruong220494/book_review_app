@@ -26,71 +26,36 @@
             </p>
           <% end %>
         </li>
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
+
+        <li class="nav-item">
+          <%= link_to admin_categories_path, class: "nav-link" do %>
             <i class="nav-icon fas fa-list-alt"></i>
             <p>
               Categories
               <i class="fas fa-angle-left right"></i>
-              <!-- <span class="badge badge-info right">6</span> -->
+             <span class="badge badge-danger right"><%= Category.all.size %></span>
             </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <%= link_to admin_categories_path, class: "nav-link" do %>
-                <i class="far fa-circle nav-icon"></i>
-                <p>index</p>
-              <% end %>
-            </li>
-          </ul>
+          <% end %>
         </li>
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
+        <li class="nav-item">
+          <%= link_to admin_posts_path, class: "nav-link" do %>
             <i class="nav-icon fas fa-copy"></i>
             <p>
               Posts
               <i class="fas fa-angle-left right"></i>
-              <!-- <span class="badge badge-info right">6</span> -->
+              <span class="badge badge-info right"><%= Post.all.size %></span>
             </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <%= link_to admin_posts_path, class: "nav-link" do %>
-                <i class="far fa-circle nav-icon"></i>
-                <p>index</p>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "", class: "nav-link" do %>
-                <i class="far fa-plus-square nav-icon"></i>
-                <p>Create</p>
-              <% end %>
-            </li>
-          </ul>
+          <% end %>
         </li>
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-tags"></i>
+        <li class="nav-item">
+          <%= link_to admin_accounts_path, class: "nav-link" do %>
+            <i class="nav-icon fas fa-users"></i>
             <p>
-              Tags
+              Accounts
               <i class="fas fa-angle-left right"></i>
-              <!-- <span class="badge badge-info right">6</span> -->
+              <span class="badge badge-success right"><%= Account.all.size %></span>
             </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <%= link_to "", class: "nav-link" do %>
-                <i class="far fa-circle nav-icon"></i>
-                <p>index</p>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "", class: "nav-link" do %>
-                <i class="far fa-plus-square nav-icon"></i>
-                <p>Create</p>
-              <% end %>
-            </li>
-          </ul>
+          <% end %>
         </li>
       </ul>
     </nav>
