@@ -22,9 +22,9 @@
         <% @category.posts.show_post_head.each do |post| %>
           <div class="col-md-6 col-lg-3">
             <div class="mb-5 mb-lg-0">
-              <a class="d-block mb-3" href="">
+              <%= link_to post_path(post), class: "d-block mb-3" do %>
                 <img src="<%= url_for(post.image_cover_cate) %>" class="img-fluid h-185rem lazy-header" alt="image cover <%= post.name %>">
-              </a>
+              <% end %>
               <div class="text-center">
                 <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
                   <%= link_to post_path(post) do %>
@@ -32,7 +32,7 @@
                   <% end %>
                 </h6>
                 <a class="font-size-13 font-weight-bold" href=""><%= post.account.name %></a>
-                <a class="product-comment font-weight-normal font-size-13 font-italic h-g-primary" href=""><%= post.created_at.strftime(Settings.date.formats) %></a>
+                <a class="product-comment font-weight-normal font-size-13 font-italic h-g-primary" href="javascript:;"><%= post.created_at.strftime(Settings.date.formats) %></a>
               </div>
             </div>
           </div>
@@ -51,9 +51,9 @@
             <% @category.posts.show_post_body.each do |post| %>
               <div class="row mb-4">
                 <div class="col-lg-6">
-                  <a class="d-block mb-3 mb-lg-0" href="">
+                  <%= link_to post_path(post), class: "d-block mb-3 mb-lg-0" do %>
                     <%= image_tag(post.image_cover_cate, class: "img-fluid lazy-load", alt: "image cover #{post.name}") %>
-                  </a>
+                  <% end %>
                 </div>
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
                   <h6 class="product_title font-size-22 font-secondary font-weight-semi-bold text-lh-1dot3 mb-1 pr-1">
@@ -65,7 +65,7 @@
                     <a href="" class="font-weight-bold font-size-13">
                       <span><%= post.account.name %></span>
                     </a>
-                    <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                       <span><%= post.created_at.strftime(Settings.date.formats) %></span>
                     </a>
                   </div>
@@ -82,139 +82,40 @@
             <div class="d-flex align-items-baseline justify-content-between mb-5 pb-1">
               <h6 class="font-size-24 font-weight-medium font-secondary mb-0">Bài viết nổi bật</h6>
               <div class="border-top col p-0 mx-2 border-gray-3600"></div>
-              <a href="#" class="h-g-primary font-size-1 font-weight-medium font-secondary">VIEW ALL</a>
             </div>
             <div class="row">
-              <div class="col-lg-6 col-xl-12">
-                <div class="row no-gutters border-bottom mb-4 pb-4">
-                  <div class="col-md-4">
-                    <a class="d-flex h-100 mb-3 mb-lg-0" href="">
-                      <%= image_tag("370210img1.jpg", class: "img-fluid lazy-header") %>
-                    </a>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="ml-md-3">
-                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="">Jones apologises Craig for Trump</a>
-                      </h6>
-                      <div class="d-flex align-items-center d-xl-block">
-                        <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="">Basketball</a>
-                        </div>
-                        <div>
-                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                            <span>October 6 2020</span>
-                          </a>
+              <% Category.cate_show("highlight").last.posts.limit(5).each do |post|%>
+                <div class="col-lg-6 col-xl-12">
+                  <div class="row no-gutters border-bottom mb-4 pb-4">
+                    <div class="col-md-4">
+                      <%= link_to post_path(post), class: "d-flex h-100 mb-3 mb-lg-0" do %>
+                        <%= image_tag(post.image_cover_cate, class: "img-fluid lazy-header", alt: "image cover #{post.name}") %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="ml-md-3">
+                        <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
+                          <%= link_to post_path(post) do %>
+                            <%= post.name %>
+                          <% end %>
+                        </h6>
+                        <div class="d-flex align-items-center d-xl-block">
+                          <div class="text-lh-1dot1">
+                            <%= link_to account_path(post.account), class: "font-size-13 font-weight-bold" do %>
+                              <span><%= post.account.name %></span>
+                            <% end %>
+                          </div>
+                          <div>
+                            <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                              <span><%= post.created_at.strftime(Settings.date.formats) %></span>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6 col-xl-12">
-                <div class="row no-gutters border-bottom mb-4 pb-4">
-                  <div class="col-md-4">
-                    <a class="d-flex h-100" href="">
-                      <%= image_tag("370210img2.jpg", class: "img-fluid lazy-header") %>
-                    </a>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="ml-md-3">
-                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="">Seven uncapped players in NZ</a>
-                      </h6>
-                      <div class="d-flex align-items-center">
-                        <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="">Views</a>
-                        </div>
-                        <div>
-                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                            <span>October 6 2020</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-xl-12">
-                <div class="row no-gutters border-bottom mb-4 pb-4">
-                  <div class="col-md-4">
-                    <a class="d-flex h-100" href="">
-                      <%= image_tag("370210img3.jpg", class: "img-fluid lazy-header") %>
-                    </a>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="ml-md-3">
-                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="">Record-setting Griefer or Villain?</a>
-                      </h6>
-                      <div class="d-flex align-items-center">
-                        <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="">Review</a>
-                        </div>
-                        <div>
-                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                            <span>October 6 2020</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-xl-12">
-                <div class="row no-gutters border-bottom mb-4 pb-4">
-                  <div class="col-md-4">
-                    <a class="d-flex h-100" href="">
-                      <%= image_tag("370210img1.jpg", class: "img-fluid lazy-header") %>
-                    </a>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="ml-md-3">
-                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="">Federer wins Stuttgart title</a>
-                      </h6>
-                      <div class="d-flex align-items-center">
-                        <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="">News</a>
-                        </div>
-                        <div>
-                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                            <span>October 6 2020</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-xl-12">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <a class="d-flex h-100" href="">
-                      <%= image_tag("370210img2.jpg", class: "img-fluid lazy-header") %>
-                    </a>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="ml-md-3">
-                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                        <a href="">Jones apologises Craig for Trump</a>
-                      </h6>
-                      <div class="d-flex align-items-center">
-                        <div class="text-lh-1dot1">
-                          <a class="font-size-13 font-weight-bold" href="">Soccer</a>
-                        </div>
-                        <div>
-                          <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                            <span>October 6 2020</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <% end %>
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   devise_for :accounts, controllers: {omniauth_callbacks: "accounts/omniauth_callbacks"}
   resources :accounts, only: :show
   resources :categories, only: :show, param: :slug
-  resources :posts
+  resources :posts, only: :show, param: :slug
 
   root "client#home"
   get "/faq", to: "faqs#faq"

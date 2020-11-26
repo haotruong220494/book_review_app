@@ -1,0 +1,100 @@
+<%= provide :title, @post.name  %>
+
+<%= content_for :breadcum_first, "Trang chủ" %>
+<%= content_for :breadcum_first_link, root_path %>
+<%= content_for :breadcum_second, @post.category.title %>
+<%= content_for :breadcum_second_link, category_path(@post.category) %>
+<%= content_for :breadcum_third, @post.name %>
+
+<div class="container px-md-5">
+  <%= render "layouts/breadcrumb"%>
+  <div class="row mb-5 mb-lg-6">
+    <div class="col-lg-8">
+      <div class="mb-6">
+        <div class="mb-6">
+          <a class="d-block mb-4">
+            <%= image_tag(@post.banner_cover, class: "img-fluid lazy-header", alt: "Image cover #{@post.name}")%>
+          </a>
+          <h6 class="font-size-26 font-weight-semi-bold mb-1">
+            <%= @post.name %>
+          </h6>
+          <div class="mb-3 pb-1">
+            <a href="" class="font-weight-semi-bold font-size-13">
+              <span><%= @post.account.name %></span>
+            </a>
+            <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+              <span><%= @post.created_at.strftime(Settings.date.formats) %></span>
+            </a>
+          </div>
+          <p class="font-size-15 font-weight-bold mb-3 pb-1">
+            <%= @post.description %>
+          </p>
+          <p class="font-size-1 mb-3 pb-1">
+             <%= raw(@post.content) %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="pl-lg-6">
+        <div class="mb-5 mb-lg-7">
+          <div class="block-account">
+            <div class="top">
+              <a href="" title="" class="ava">
+                <img src="http://graph.facebook.com/v4.0/1800719213410298/picture?access_token=EAAFsEAurMCkBAFwrZA5RDdqFOTWfagOdiZCvkZALSPFYqG3BoTUOVtY6bEU81TZC7swWpxejUoZBK2vPsa3vCWQM5SlT1obkblQqMwXKMnoJE85vXFZB4WHZCcD4Q4XZASBlQgZADRFSK04We54rjyEYZBM7grTpyohqg4MizZCtaR7nQZDZD" alt="avatar">
+                <h3 class="name"><%= @post.account.name %></h3>
+              </a>
+              <span class="ranking">Bạn đọc thân thiện</span>
+              <div class="description-account">
+                ✎﹏ <%= @post.account.description %> ﹏✮
+              </div>
+            </div>
+            <div class="bottom-social">
+              <ul>
+                <li><a href="<%= @post.account.fb_link %>" style="color: #4367b2;"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="<%= @post.account.fb_link %>" style="color: #c72e90;"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mb-5 mb-lg-7">
+          <header class="d-md-flex align-items-center justify-content-between mb-3 pb-1 w-100 home-section">
+            <h6 class="font-size-20 font-weight-medium m-0 text-gray-700">Cùng kệ sách</h6>
+            <div class="border-top col p-0 mx-3 border-gray-3600"></div>
+            <%= link_to category_path(@post.category), class: "h-g-primary font-size-1 font-weight-medium font-secondary" do %>
+              Xem tất cả
+            <% end %>
+          </header>
+          <% display_related_post(@post).each do |post| %>
+            <div class="row no-gutters border-bottom mb-4 pb-4">
+              <div class="col-md-4">
+                <%= link_to post_path(post), class: "d-flex h-100 mb-3 mb-lg-0" do %>
+                  <%= image_tag(post.image_cover_cate, class: "img-fluid lazy-header", alt: "Ảnh #{post.name}") %>
+                <% end %>
+              </div>
+              <div class="col-md-8">
+                <div class="px-md-3">
+                  <h6 class="product-title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
+                    <%= link_to post_path(post) do %>
+                      <%= post.name %>
+                    <% end %>
+                  </h6>
+                  <div class="d-flex align-items-center">
+                    <div class="text-lh-1dot1 font-size-13 font-weight-bold">
+                      <span><%= @post.account.name %></span>
+                    </div>
+                    <div>
+                      <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                        <span><%= @post.created_at.strftime(Settings.date.formats) %></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

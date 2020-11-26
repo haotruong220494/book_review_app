@@ -22,5 +22,23 @@
         <% end %>
       </li>
     <% end %>
+    <% if content_for?(:breadcum_third) %>
+      <li class="breadcrumb-item flex-shrink-0 flex-shrink-md-1">
+        <% if content_for?(:breadcum_third_link) %>
+          <%= link_to yield(:breadcum_third), yield(:breadcum_third_link) %>
+        <% else %>
+          <span>
+            <%= yield(:breadcum_third) %>
+          </span>
+        <% end %>
+      </li>
+    <% end %>
+    <% if content_for?(:sub_breadcum_item) %>
+      <li class="breadcrumb-item flex-shrink-0 flex-shrink-md-1">
+        <span>
+          <%= yield(:sub_breadcum_item) %>
+        </span>
+      </li>
+    <% end %>
   </ol>
 </nav>

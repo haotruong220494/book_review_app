@@ -5,7 +5,7 @@
 <%= content_for :breadcum_first_link, admin_root_path %>
 <%= content_for :breadcum_second, "Categories" %>
 <%= content_for :breadcum_second_link, admin_categories_path %>
-<%= content_for :breadcum_third, @category.name %>
+<%= content_for :breadcum_third, @category.title %>
 <%= content_for :sub_breadcum_item, "Edit" %>
 
 <%= render "layouts/breadcrumb_admin"%>

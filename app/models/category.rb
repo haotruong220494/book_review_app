@@ -10,7 +10,7 @@ class Category < ApplicationRecord
   validates :title, presence: true
   before_save :to_slug
 
-  scope :cate_show_header, -> { where location: "header" }
+  scope :cate_show, ->(type) { where location: type }
 
   def to_param
     "#{to_slug}#{id}"
