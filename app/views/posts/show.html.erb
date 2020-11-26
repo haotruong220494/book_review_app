@@ -41,10 +41,14 @@
           <div class="block-account">
             <div class="top">
               <a href="" title="" class="ava">
-                <img src="http://graph.facebook.com/v4.0/1800719213410298/picture?access_token=EAAFsEAurMCkBAFwrZA5RDdqFOTWfagOdiZCvkZALSPFYqG3BoTUOVtY6bEU81TZC7swWpxejUoZBK2vPsa3vCWQM5SlT1obkblQqMwXKMnoJE85vXFZB4WHZCcD4Q4XZASBlQgZADRFSK04We54rjyEYZBM7grTpyohqg4MizZCtaR7nQZDZD" alt="avatar">
+                <% if @post.account.image.attached? %>
+                  <%= image_tag(@post.account.image, class: "lazy-header", alt: "Avatar") %>
+                <% else %>
+                  <%= image_tag(@post.account.avatar, class: "lazy-header", alt: "Avatar") %>
+                <% end %>
                 <h3 class="name"><%= @post.account.name %></h3>
               </a>
-              <span class="ranking">Bạn đọc thân thiện</span>
+              <span class="ranking"><%= rank_enum_name(@post.account.rank) %></span>
               <div class="description-account">
                 ✎﹏ <%= @post.account.description %> ﹏✮
               </div>

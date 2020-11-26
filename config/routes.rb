@@ -14,7 +14,11 @@ Rails.application.routes.draw do
         delete :delete_image_attachment
       end
     end
-    resources :accounts
+    resources :accounts do
+      member do
+        delete :delete_image_attachment
+      end
+    end
   end
 
   devise_for :accounts, controllers: {omniauth_callbacks: "accounts/omniauth_callbacks"}

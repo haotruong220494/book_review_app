@@ -7,7 +7,7 @@ class Category < ApplicationRecord
   has_one_attached :image
   has_one_attached :banner_cover
 
-  validates :title, presence: true
+  validates :title, :description, presence: true
   before_save :to_slug
 
   scope :cate_show, ->(type) { where location: type }
