@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_062116) do
+ActiveRecord::Schema.define(version: 2020_11_27_084006) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -115,6 +115,9 @@ ActiveRecord::Schema.define(version: 2020_11_26_062116) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_cover_cate"
+    t.string "thumb_slider_image"
+    t.string "bg_slider_image"
+    t.string "highlight_image"
     t.index ["account_id"], name: "index_posts_on_account_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
   end

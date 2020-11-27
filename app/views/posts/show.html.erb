@@ -1,4 +1,4 @@
-<%= provide :title, @post.name  %>
+<%= provide :title, "Reivew " + @post.name.downcase  %>
 
 <%= content_for :breadcum_first, "Trang chủ" %>
 <%= content_for :breadcum_first_link, root_path %>
@@ -32,6 +32,15 @@
           <p class="font-size-1 mb-3 pb-1">
              <%= raw(@post.content) %>
           </p>
+        </div>
+        <div class="mb-2" ><%= image_tag(asset_path("like.png"), class: "img-fluid lazy-header", alt: "like & share", style: "width: 30%" )%></div>
+        <div class="fb-like" 
+          data-href="<%= post_path(@post) %>" 
+          data-width=""
+          data-layout="standard" 
+          data-action="like" 
+          data-size="small"  
+          data-share="true">
         </div>
       </div>
     </div>

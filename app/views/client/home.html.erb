@@ -14,144 +14,35 @@
       "asNavFor": "#sliderSyncingThumb"
     }'
   >
-    <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= asset_path '1920676img1.jpg' %>)">
-      <div class="container">
-        <div class="mx-3 mx-md-5 col-xl-5 px-0">
-          <h1 class="display-3 mb-3"><a href="" class="h-w-primary">American Made</a></h1>
-          <div class="mb-4d">
-            <ul class="list-unstyled nav nav-meta nav-meta__white">
-              <li class="">Xuất bản: 2020</li>
-              <li class="">Tác giả: Comedy</li>
-            </ul>
-          </div>
-          <div class="d-md-flex">
-            <a href="" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0">
-              ĐỌC NGAY
-            </a>
-            <a href="" class="btn btn-outline-light ml-md-4 px-6 py-3d btn-sm">+ ĐẶT SÁCH</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= asset_path '1920676img2.jpg' %>)">
-      <div class="container">
-        <div class="mx-3 mx-md-5 col-xl-5 px-0">
-          <h1 class="display-3 mb-3"><a href="" class="h-w-primary">The Convenient Groom</a></h1>
-          <div class="mb-4d">
-            <ul class="list-unstyled nav nav-meta nav-meta__white">
-              <li class="">Xuất bản: 2020</li>
-              <li class="">Tác giả: Comedy</li>
-            </ul>
-          </div>
-          <div class="d-md-flex">
-            <a href="" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0"> ĐỌC NGAY</a>
-            <a href="" class="btn btn-outline-light ml-md-4 px-6 py-3d btn-sm">+ ĐẶT SÁCH</a>
+    <% @posts_slider.each do |post|%>
+      <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= url_for(post.bg_slider_image) %>)">
+        <div class="container">
+          <div class="mx-3 mx-md-5 col-xl-5 px-0">
+            <h1 class="display-6 mb-3" style="text-transform: uppercase;" >
+              <%= link_to post_path(post), class: "h-w-primary" do %>
+                <%= post.name %>
+              <% end %>
+            </h1>
+            <div class="mb-4d">
+              <ul class="list-unstyled nav nav-meta nav-meta__white">
+                <li class="">Xuất bản: <%= post.release_date %></li>
+                <li class="">Tác giả: <%= post.author %></li>
+              </ul>
+            </div>
+            <div class="d-md-flex">
+              <%= link_to post_path(post), class: "btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0" do %>
+                ĐỌC NGAY
+              <% end %>
+              <% if post.buy_link.present? %>
+                <%= link_to post_path(post), class: "btn btn-outline-light ml-md-4 px-6 py-3d btn-sm" do %>
+                  + ĐẶT SÁCH
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= asset_path '1920676img3.jpg' %>)">
-      <div class="container">
-        <div class="mx-3 mx-md-5 col-xl-5 px-0">
-          <h1 class="display-3 mb-3"><a href="" class="h-w-primary">Pacific Rim: Uprising</a></h1>
-          <div class="mb-4d">
-            <ul class="list-unstyled nav nav-meta nav-meta__white">
-              <li class="">Xuất bản: 2020</li>
-              <li class="">Tác giả: Comedy</li>
-            </ul>
-          </div>
-          <div class="d-md-flex">
-            <a href="" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0"> ĐỌC NGAY</a>
-            <a href="" class="btn btn-outline-light ml-md-4 px-6 py-3d btn-sm">+ ĐẶT SÁCH</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= asset_path '1920676img4.jpg' %>)">
-      <div class="container">
-        <div class="mx-3 mx-md-5 col-xl-5 px-0">
-          <h1 class="display-3 mb-3"><a href="" class="h-w-primary">Black Mirror</a></h1>
-          <div class="mb-4d">
-            <ul class="list-unstyled nav nav-meta nav-meta__white">
-              <li class="">Xuất bản: 2020</li>
-              <li class="">Tác giả: Comedy</li>
-            </ul>
-          </div>
-          <div class="d-md-flex">
-            <a href="" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0"> ĐỌC NGAY</a>
-            <a href="" class="btn btn-outline-light ml-md-4 px-6 py-3d btn-sm">+ ĐẶT SÁCH</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= asset_path '1920676img5.jpg' %>)">
-      <div class="container">
-        <div class="mx-3 mx-md-5 col-xl-5 px-0">
-          <h1 class="display-3 mb-3"><a href="" class="h-w-primary">Paradigm Lost</a></h1>
-          <div class="mb-4d">
-            <ul class="list-unstyled nav nav-meta nav-meta__white">
-              <li class="">Xuất bản: 2020</li>
-              <li class="">Tác giả: Comedy</li>
-            </ul>
-          </div>
-          <div class="d-md-flex">
-            <a href="" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0"> ĐỌC NGAY</a>
-            <a href="" class="btn btn-outline-light ml-md-4 px-6 py-3d btn-sm">+ ĐẶT SÁCH</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= asset_path '1920676img6.jpg' %>)">
-      <div class="container">
-        <div class="mx-3 mx-md-5 col-xl-5 px-0">
-          <h1 class="display-3 mb-3"><a href="" class="h-w-primary">Black Mirror</a></h1>
-          <div class="mb-4d">
-            <ul class="list-unstyled nav nav-meta nav-meta__white">
-              <li class="">Xuất bản: 2020</li>
-              <li class="">Tác giả: Comedy</li>
-            </ul>
-          </div>
-          <div class="d-md-flex">
-            <a href="" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0"> ĐỌC NGAY</a>
-            <a href="" class="btn btn-outline-light ml-md-4 px-6 py-3d btn-sm">+ ĐẶT SÁCH</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= asset_path '1920676img7.jpg' %>)">
-      <div class="container">
-        <div class="mx-3 mx-md-5 col-xl-5 px-0">
-          <h1 class="display-3 mb-3"><a href="" class="h-w-primary">Fantastic Beasts and Where to Find Them</a></h1>
-          <div class="mb-4d">
-            <ul class="list-unstyled nav nav-meta nav-meta__white">
-              <li class="">Xuất bản: 2020</li>
-              <li class="">Tác giả: Comedy</li>
-            </ul>
-          </div>
-          <div class="d-md-flex">
-            <a href="" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0"> ĐỌC NGAY</a>
-            <a href="" class="btn btn-outline-light ml-md-4 px-6 py-3d btn-sm">+ ĐẶT SÁCH</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url(<%= asset_path '1920676img8.jpg' %>)">
-      <div class="container">
-        <div class="mx-3 mx-md-5 col-xl-5 px-0">
-          <h1 class="display-3 mb-3"><a href="" class="h-w-primary">American Made</a></h1>
-          <div class="mb-4d">
-            <ul class="list-unstyled nav nav-meta nav-meta__white">
-              <li class="">Xuất bản: 2020</li>
-              <li class="">Tác giả: Comedy</li>
-            </ul>
-          </div>
-          <div class="d-md-flex">
-           <a href="" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0"> ĐỌC NGAY</a>
-            <a href="" class="btn btn-outline-light ml-md-4 px-6 py-3d btn-sm">+ ĐẶT SÁCH</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
   <div class="d-none d-xl-flex position-xl-absolute col-xl-6 mr-3 right-0 bottom-0 mb-xl-12 slider-m-0 flex-column">
     <h4 class="text-white font-size-22 font-weight-bold mb-3">BỎ TÚI NHỮNG CUỐN SÁCH CHO THÁNG 12 CỦA BẠN</h4>
@@ -175,30 +66,11 @@
         }]
       }'
     >
-      <div class="my-1d" style="cursor: pointer;">
-        <img src="<%= asset_path("204120img1.jpg")%>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
-      </div>
-      <div class="my-1d" style="cursor: pointer;">
-        <img src="<%= asset_path("204120img2.jpg")%>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
-      </div>
-      <div class="my-1d" style="cursor: pointer;">
-        <img src="<%= asset_path("204120img3.jpg")%>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
-      </div>
-      <div class="my-1d" style="cursor: pointer;">
-        <img src="<%= asset_path("204120img4.jpg")%>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
-      </div>
-      <div class="my-1d" style="cursor: pointer;">
-        <img src="<%= asset_path("204120img5.jpg")%>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
-      </div>
-      <div class="my-1d" style="cursor: pointer;">
-        <img src="<%= asset_path("204120img6.jpg")%>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
-      </div>
-      <div class="my-1d" style="cursor: pointer;">
-        <img src="<%= asset_path("204120img7.jpg")%>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
-      </div>
-      <div class="my-1d" style="cursor: pointer;">
-        <img src="<%= asset_path("204120img8.jpg")%>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
-      </div>
+      <% @posts_slider.each do |post|%>
+        <div class="my-1d" style="cursor: pointer;">
+          <img src="<%= url_for(post.thumb_slider_image) %>" class= "img-fluid", style= 'width: 204px; height: 120px;'>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -1260,301 +1132,99 @@
   </div>
 </section>
 <section>
-  <div class="bg-gray-1100 space-1 space-bottom-lg-2">
-    <div class="container px-md-6 pt-lg-3 mt-lg-1 pb-lg-6">
+  <div class="bg-gray-1100">
+    <div class="container px-md-6 pt-lg-3 mt-lg-1">
       <div class="row">
         <div class="col-lg-4 col-xl-3">
           <header class="d-md-flex align-items-center justify-content-between mb-3 pb-1 w-100 home-section">
-            <h6 class="font-size-24 font-weight-medium mb-2 mb-md-0 text-white">Nhiều lượt đọc nhất</h6>
+            <h6 class="font-size-24 font-weight-medium mb-2 mb-md-0 text-white">Nhiều lượt xem nhất</h6>
             <div class="d-none d-md-block border-top col p-0 mx-3 border-gray-6830"></div>
           </header>
           <div class="mb-5 mb-md-7 mb-lg-6 pb-lg-1">
-            <div>
-              <div class="row no-gutters border-bottom border-gray-3200 mb-4 pb-4">
-                <div class="col-md-4">
-                  <a class="d-flex h-100 mb-3 mb-lg-0" href="">
-                    <%= image_tag("480270img14.jpg", class: "img-fluid lazy-load") %>
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <div class="ml-md-3">
-                    <h6 class="product--title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                      <a href="">Record-Setting Griefer or Villain?</a>
-                    </h6>
-                    <div class="d-flex align-items-center d-md-block">
-                      <div class="text-lh-1dot1">
-                        <a class="font-size-13 font-weight-bold" href="">Uncategorized</a>
-                      </div>
-                      <div>
-                        <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                          <span>October 6 2020</span>
-                        </a>
+            <% @post_views.each do |post| %>
+              <div>
+                <div class="row no-gutters border-bottom border-gray-3200 mb-4 pb-4">
+                  <div class="col-md-4">
+                    <%= link_to post_path(post), class: "d-flex h-100 mb-3 mb-lg-0" do %>
+                      <%= image_tag(url_for(post.image_cover_cate), class: "img-fluid lazy-load") %>
+                    <% end %>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="ml-md-3">
+                      <h6 class="product--title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
+                        <%= link_to post.name, post_path(post) %>
+                      </h6>
+                      <div class="d-flex align-items-center d-md-block">
+                        <div class="text-lh-1dot1">
+                          <%= link_to account_path(post.account), class: "font-size-13 font-weight-bold" do %>
+                            <%= post.account.name %>
+                          <% end %>
+                        </div>
+                        <div>
+                          <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                             <span><%= post.created_at.strftime(Settings.date.formats) %></span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="row no-gutters border-bottom border-gray-3200 mb-4 pb-4">
-                <div class="col-md-4">
-                  <a class="d-flex h-100" href="">
-                    <%= image_tag("480270img14.jpg", class: "img-fluid lazy-load") %>
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <div class="ml-md-3">
-                    <h6 class="product--title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                      <a href="">Wizard Actor Has Another Role</a>
-                    </h6>
-                    <div class="d-flex align-items-center d-md-block">
-                      <div class="text-lh-1dot1">
-                        <a class="font-size-13 font-weight-bold" href="">Hot Rumours</a>
-                      </div>
-                      <div>
-                        <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                          <span>October 6 2020</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="row no-gutters border-bottom border-gray-3200 mb-4 pb-4">
-                <div class="col-md-4">
-                  <a class="d-flex h-100" href="">
-                    <%= image_tag("480270img14.jpg", class: "img-fluid lazy-load") %>
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <div class="ml-md-3">
-                    <h6 class="product--title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                      <a href="">Saints, Leicester agree Maddison fee</a>
-                    </h6>
-                    <div class="d-flex align-items-center">
-                      <div class="text-lh-1dot1">
-                        <a class="font-size-13 font-weight-bold" href="">Trilers</a>
-                      </div>
-                      <div>
-                        <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                          <span>October 6 2020</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="row no-gutters border-bottom border-gray-3200 mb-4 pb-4">
-                <div class="col-md-4">
-                  <a class="d-flex h-100" href="">
-                    <%= image_tag("480270img14.jpg", class: "img-fluid lazy-load") %>
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <div class="ml-md-3">
-                    <h6 class="product--title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                      <a href="">Galaxy Wars: XII Anne Trailer ../blog/blog-single.html2</a>
-                    </h6>
-                    <div class="d-flex align-items-center d-md-block">
-                      <div class="text-lh-1dot1">
-                        <a class="font-size-13 font-weight-bold" href="">Movie Trailers</a>
-                      </div>
-                      <div>
-                        <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                          <span>October 6 2020</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <a class="d-flex h-100" href="">
-                    <%= image_tag("480270img14.jpg", class: "img-fluid lazy-load") %>
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <div class="ml-md-3">
-                    <h6 class="product--title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
-                      <a href="">Black Division Bringing Back</a>
-                    </h6>
-                    <div class="d-flex align-items-center">
-                      <div class="text-lh-1dot1">
-                        <a class="font-size-13 font-weight-bold" href="">Movie</a>
-                      </div>
-                      <div>
-                        <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                          <span>October 6 2020</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mb-5 mb-lg-7 mb-xl-0">
-            <header class="d-md-flex align-items-center justify-content-between mb-3 pb-1 w-100 home-section">
-              <h6 class="font-size-24 font-weight-medium mb-2 mb-md-0 text-white">
-                Recents <br />
-                Comments
-              </h6>
-              <div class="d-none d-md-block border-top col p-0 mx-3 border-gray-6830"></div>
-              <a href="" class="h-g-primary font-size-1 font-weight-medium font-secondary">View All</a>
-            </header>
-            <div class="border-bottom border-gray-3200 pb-2 mb-1">
-              <div class="font-size-15 font-weight-normal text-gray-1300">Abu backer on</div>
-              <div class="font-secondary font-size-15 font-weight-semi-bold">
-                <a href="" class="text-white">Movies That Earned a 0% Rating on Rotten Pomidoros</a>
-              </div>
-            </div>
-            <div class="border-bottom border-gray-3200 pb-2 mb-1">
-              <div class="font-size-15 font-weight-normal text-gray-1300">Abu backer on</div>
-              <div class="font-secondary font-size-15 font-weight-semi-bold">
-                <a href="" class="text-white">Great Movies in 2020 That No One is Talking About</a>
-              </div>
-            </div>
-            <div class="border-bottom border-gray-3200 pb-2 mb-1">
-              <div class="font-size-15 font-weight-normal text-gray-1300">Akther Jabeen on</div>
-              <div class="font-secondary font-size-15 font-weight-semi-bold">
-                <a href="" class="text-white">One Big Question Monster 3 Needs To Answer</a>
-              </div>
-            </div>
-            <div class="border-bottom border-gray-3200 pb-2 mb-1">
-              <div class="font-size-15 font-weight-normal text-gray-1300">Abu backer on</div>
-              <div class="font-secondary font-size-15 font-weight-semi-bold">
-                <a href="" class="text-white">An Unforgettable Worldcup</a>
-              </div>
-            </div>
-            <div>
-              <div class="font-size-15 font-weight-normal text-gray-1300">Abu backer on</div>
-              <div class="font-secondary font-size-15 font-weight-semi-bold">
-                <a href="" class="text-white">2020 Motorcycle Racing Crash Compilation</a>
-              </div>
-            </div>
+            <% end %>
           </div>
         </div>
         <div class="col-lg-8 col-xl-9">
           <div class="pl-lg-4 pl-xl-6">
             <header class="d-md-flex align-items-center justify-content-between mb-3 pb-1 w-100 home-section">
-              <h6 class="font-size-24 font-weight-medium mb-2 mb-md-0 text-white">Mới Nhất</h6>
+              <h6 class="font-size-24 font-weight-medium mb-2 mb-md-0 text-white">Bài review mới Nhất</h6>
               <div class="d-none d-md-block border-top col p-0 mx-3 border-gray-6830"></div>
-              <a href="#" class="h-g-primary font-size-1 font-weight-medium font-secondary">Xem tất cả</a>
             </header>
             <div class="mb-6 mb-lg-9">
-              <a class="d-block mb-4" href="">
-                <%= image_tag("990435img1.jpg", class: "img-fluid lazy-load") %>
-              </a>
+              <%= link_to post_path(@post_new_first), class: "d-block mb-4" do %>
+                <%= image_tag(url_for(@post_new_first.banner_cover), class: "img-fluid lazy-load") %>
+              <% end %>
               <h2 class="product--title font-weight-semi-bold font-size-26 text-lh-1 mb-2 mb-md-0">
-                <a href="">Battle Mode Not Currently Planned For Crytek's New Shooter</a>
+                <%= link_to @post_new_first.name, post_path(@post_new_first) %>
               </h2>
               <div class="mb-2 pb-1">
-                <a href="" class="font-weight-bold font-size-13">
-                  <span>News</span>
-                </a>
-                <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                  <span>February 2 2020</span>
-                </a>
-                <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                  <span>leave a comment</span>
+                <%= link_to account_path(@post_new_first.account), class: "font-weight-bold font-size-13" do %>
+                  <span><%= @post_new_first.account.name %></span>
+                <% end %>
+                <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                  <span><%= @post_new_first.created_at.strftime(Settings.date.formats) %></span>
                 </a>
               </div>
               <p class="font-size-1 text-gray-1300 mb-0">
-                Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
+                <%= @post_new_first.description %>
               </p>
             </div>
-            <div class="row mb-5 pb-1">
-              <div class="col-md-4">
-                <a class="d-flex h-100" href="">
-                  <%= image_tag("480270img14.jpg", class: "img-fluid lazy-load") %>
-                </a>
-              </div>
-              <div class="col-md-8 d-flex flex-column justify-content-center">
-                <div class="pr-lg-4 mt-3 mt-lg-0">
-                  <h6 class="font-size-22 font-weight-semi-bold product--title text-lh-1dot25 mb-2 mb-md-0">
-                    <a href="">Why Announcing Bad Never Let Walt Try His Blue Meth</a>
-                  </h6>
-                  <div class="mb-2 pb-1">
-                    <a href="" class="font-weight-bold font-size-13">
-                      <span>TV Series</span>
-                    </a>
-                    <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span>February 2 2020</span>
-                    </a>
-                    <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span>leave a comment</span>
-                    </a>
+            <% @post_news.each do |post| %>
+              <div class="row mb-5 pb-1">
+                <div class="col-md-4">
+                  <%= link_to post_path(post), class: "d-flex h-100" do %>
+                    <%= image_tag(url_for(post.image_cover_cate), class: "img-fluid lazy-load") %>
+                  <% end %>
+                </div>
+                <div class="col-md-8 d-flex flex-column justify-content-center">
+                  <div class="pr-lg-4 mt-3 mt-lg-0">
+                    <h6 class="font-size-22 font-weight-semi-bold product--title text-lh-1dot25 mb-2 mb-md-0">
+                      <%= link_to post.name, post_path(post) %>
+                    </h6>
+                    <div class="mb-2 pb-1">
+                      <%= link_to account_path(post.account), class: "font-weight-bold font-size-13" do %>
+                        <span><%= post.account.name %></span>
+                      <% end %>
+                      <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                        <span><%= post.created_at.strftime(Settings.date.formats) %></span>
+                      </a>
+                    </div>
+                    <p class="mb-0 font-size-1 text-gray-1300">
+                     <%= post.description %>
+                    </p>
                   </div>
-                  <p class="mb-0 font-size-1 text-gray-1300">
-                    Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
-                  </p>
                 </div>
               </div>
-            </div>
-            <div class="row mb-5 pb-1">
-              <div class="col-md-4">
-                <a class="d-flex h-100" href="">
-                  <%= image_tag("480270img14.jpg", class: "img-fluid lazy-load") %>
-                </a>
-              </div>
-              <div class="col-md-8 d-flex flex-column justify-content-center">
-                <div class="pr-lg-4 mt-3 mt-lg-0">
-                  <h6 class="font-size-22 font-weight-semi-bold product--title text-lh-1dot25 mb-2 mb-md-0">
-                    <a href="">First Glass Photos Bring Unbreakable and Split Villians Together</a>
-                  </h6>
-                  <div class="mb-2 pb-1">
-                    <a href="" class="font-weight-bold font-size-13">
-                      <span>Hot Rumours</span>
-                    </a>
-                    <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span>February 2 2020</span>
-                    </a>
-                    <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span>leave a comment</span>
-                    </a>
-                  </div>
-                  <p class="mb-0 font-size-1 text-gray-1300">
-                    Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-4">
-                <a class="d-flex h-100" href="">
-                  <%= image_tag("480270img14.jpg", class: "img-fluid lazy-load") %>
-                </a>
-              </div>
-              <div class="col-md-8 d-flex flex-column justify-content-center">
-                <div class="pr-lg-4 mt-3 mt-lg-0">
-                  <h6 class="font-size-22 font-weight-semi-bold product--title text-lh-1dot25 mb-2 mb-md-0">
-                    <a href="">Open-World Star Wars Game May Still Use Uncharted </a>
-                  </h6>
-                  <div class="mb-2 pb-1">
-                    <a href="" class="font-weight-bold font-size-13">
-                      <span>Aticles</span>
-                    </a>
-                    <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span>February 2 2020</span>
-                    </a>
-                    <a href="" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span>leave a comment</span>
-                    </a>
-                  </div>
-                  <p class="mb-0 font-size-1 text-gray-1300">
-                    Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
