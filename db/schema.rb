@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_084006) do
+ActiveRecord::Schema.define(version: 2020_11_28_085022) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_084006) do
     t.string "image"
     t.string "insta_link"
     t.integer "rank", default: 1
+    t.string "image_cover"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
@@ -77,6 +78,15 @@ ActiveRecord::Schema.define(version: 2020_11_27_084006) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "image"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -106,7 +116,6 @@ ActiveRecord::Schema.define(version: 2020_11_27_084006) do
     t.text "description"
     t.string "image_cover"
     t.string "banner_cover"
-    t.string "author"
     t.text "content"
     t.string "slug"
     t.string "buy_link"
@@ -118,9 +127,12 @@ ActiveRecord::Schema.define(version: 2020_11_27_084006) do
     t.string "thumb_slider_image"
     t.string "bg_slider_image"
     t.string "highlight_image"
+    t.bigint "author_id"
     t.index ["account_id"], name: "index_posts_on_account_id"
+    t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "authors"
 end

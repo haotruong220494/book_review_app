@@ -1,6 +1,7 @@
 per_page:
   default: 6
   client: 8
+  account: 5
 date:
   formats: "%d/%m/%Y"
 time:

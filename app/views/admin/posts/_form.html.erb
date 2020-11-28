@@ -45,15 +45,6 @@
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :author, class: "col-md-4 control-label" %>
-          <div class="col-md-12">
-            <%= f.input :author, as: :string,
-              input_html: { class: "form-control input-circle input-title", placeholder: "author..." },
-              label: false,
-              autofocus: true %>
-          </div>
-        </div>
-        <div class="form-group">
           <%= f.label :buy_link, class: "col-md-4 control-label" %>
           <div class="col-md-12">
             <%= f.input :buy_link, as: :string,
@@ -85,19 +76,23 @@
           </div>
         </div>
         <div class="form-group">
+          <%= f.label :author_id, class: "col-md-4 control-label" %>
+          <div class="col-md-12">
+            <%= f.collection_select :author_id, Author.all, :id, :name %>
+          </div>
+        </div>
+        <div class="form-group">
           <%= f.label :category_id, class: "col-md-4 control-label" %>
           <div class="col-md-12">
             <%= f.collection_select :category_id, Category.all, :id, :title %>
           </div>
         </div>
-        <% if Account.all.count > 0%>
-          <div class="form-group">
-            <%= f.label :account_id, class: "col-md-4 control-label" %>
-            <div class="col-md-12">
-              <%= f.collection_select :account_id, Account.all, :id, :name %>
-            </div>
+        <div class="form-group">
+          <%= f.label :account_id, class: "col-md-4 control-label" %>
+          <div class="col-md-12">
+            <%= f.collection_select :account_id, Account.all, :id, :name %>
           </div>
-        <% end %>
+        </div>
         <div class="form-group custom-file mb-3">
           <div class="row">
             <label>Image cover (174*260)</label>

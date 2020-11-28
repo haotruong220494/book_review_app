@@ -1,1 +1,66 @@
-show.html.erb
+<%= provide :title, @account.name  %>
+<div class="bg-img-hero"
+  <% if @account.image_cover.attached? %>
+    style="background-image: url('<%= url_for(@account.image_cover) %>'); height: 400px;"
+  <% else %>
+     style="background: #d0d0d0; height: 600px;"
+  <% end %>
+>
+</div>
+<div class="container px-md-5">
+  <div class="avatar-account">
+  	<img src="<%= url_for(@account.image) %>" alt="avatar">
+  	<span class="account-name"><%= @account.name %></span>
+  </div>
+  <div class="row mt-6 mb-6">
+  	<div class="col-xl-4">
+  		<div class="introduce-account">
+  			<div class="gt">
+  				<i class="fas fa-globe-asia"></i>
+  				<span>Giới thiệu</span>
+  			</div>
+  			<div class="account-description mt-2 border-bottom border-gray-3600 pb-2">
+  				<i>✎﹏ <%= @account.description %> ﹏✮</i>
+  			</div>
+  			<div class="account-social mt-1">
+          <ul>
+            <li><a href="<%= @account.fb_link %>" style="color: #4367b2;"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="<%= @account.insta_link %>" style="color: #c72e90;"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+  		</div>
+  	</div>
+  	<div class="col-xl-8">
+  		<div class="mb-5 mb-xl-0">
+        <% @posts.each do |post| %>
+          <div class="row mb-4">
+            <div class="col-lg-6">
+              <%= link_to post_path(post), class: "d-block mb-3 mb-lg-0" do %>
+                <%= image_tag(post.image_cover_cate, class: "img-fluid lazy-load", alt: "image cover #{post.name}") %>
+              <% end %>
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+              <h6 class="product_title font-size-22 font-secondary font-weight-semi-bold text-lh-1dot3 mb-1 pr-1">
+                <%= link_to post_path(post) do %>
+                  <%= post.name %>
+                <% end %>
+              </h6>
+              <div class="mb-2 pb-1">
+                <a href="" class="font-weight-bold font-size-13">
+                  <span><%= post.author.name %></span>
+                </a>
+                <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                  <span><%= post.created_at.strftime(Settings.date.formats) %></span>
+                </a>
+              </div>
+              <p class="font-size-1 mb-0 pr-lg-7">
+                <%= post.description %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @posts, theme: "front" %>
+      </div>
+  	</div>
+  </div>
+</div>

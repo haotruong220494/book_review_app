@@ -1,0 +1,17 @@
+<tr>
+  <td style="width: 10%"></i><%= author.name %></td>
+  <td style="width: 10%"></i>
+    <% if author.image.attached? %>
+      <img style="width: 80px" src="<%= url_for(author.image) %>" alt="">
+    <% end %>
+  </td>
+  <td style="width: 10%"><%= truncate(author.description , length: 30, omission: '...') %></td>
+  <td class="action-article" style="width: 10%;">
+    <%= link_to edit_admin_author_path(author) do %>
+      <%= content_tag :i, "", class: "far fa-edit text-info" %>
+    <% end %>
+    <%= link_to admin_author_path(author), method: :delete, data: { confirm: "You sure?" } do %>
+      <%= content_tag :i, "" , class: "far fa-trash-alt text-danger" %>
+    <% end %>
+  </td>
+</tr>

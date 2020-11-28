@@ -19,12 +19,18 @@ Rails.application.routes.draw do
         delete :delete_image_attachment
       end
     end
+    resources :authors do
+      member do
+        delete :delete_image_attachment
+      end
+    end
   end
 
   devise_for :accounts, controllers: {omniauth_callbacks: "accounts/omniauth_callbacks"}
   resources :accounts, only: :show
+  resources :authors, only: :show, param: :slug
   resources :categories, only: :show, param: :slug
-  resources :posts, only: :show, param: :slug
+  resources :posts, only: [:show, :index], param: :slug
 
   root "client#home"
   get "/faq", to: "faqs#faq"

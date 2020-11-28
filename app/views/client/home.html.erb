@@ -1,5 +1,5 @@
 <%= provide :title, "Review sách" %>
-<%= provide :image, image_url('') %>
+<%= provide :image, asset_path('') %>
 
 <div class="home-slider position-relative overflow-hidden">
   <div
@@ -26,7 +26,7 @@
             <div class="mb-4d">
               <ul class="list-unstyled nav nav-meta nav-meta__white">
                 <li class="">Xuất bản: <%= post.release_date %></li>
-                <li class="">Tác giả: <%= post.author %></li>
+                <li class="">Tác giả: <%= post.author.name %></li>
               </ul>
             </div>
             <div class="d-md-flex">
@@ -425,27 +425,12 @@
 <section class="space-1 bg-gray-2800">
   <div class="container my-3">
     <div class="row">
-      <div class="offset-md-5 offset-lg-4 col-md-7 col-lg-8">
-        <div class="text-center tab-nav__v1">
-          <ul class="nav mb-2 mb-md-7" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-one-code-example2-tab" data-toggle="pill" href="#pills-one-code-example2" role="tab" aria-controls="pills-one-code-example2" aria-selected="true">Tuần trước</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-two-code-example2-tab" data-toggle="pill" href="#pills-two-code-example2" role="tab" aria-controls="pills-two-code-example2" aria-selected="false">Tháng trước</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row">
       <div class="col">
         <div class="tab-content">
-          <div class="tab-pane fade show active" id="pills-one-code-example2" role="tabpanel" aria-labelledby="pills-one-code-example2-tab">
-            <div class="row">
+          <div class="row">
               <div class="col-md-5 col-lg-4 mb-3 mb-md-5">
                 <header class="max-w-370 mt-auto mb-xl-8 title-dash">
-                  <h3 class="display-7 mb-3 font-weight-semi-bold">Những cuốn sách được nhiều bạn đọc bỏ túi</h3>
+                  <h3 class="display-7 mb-3 font-weight-semi-bold">Những cuốn sách hay có chọn lọc</h3>
                 </header>
               </div>
               <div class="col-md-7 col-lg-8 mb-md-5">
@@ -614,181 +599,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="pills-two-code-example2" role="tabpanel" aria-labelledby="pills-two-code-example2-tab">
-            <div class="row">
-              <div class="col-md-5 col-lg-4 mb-3 mb-md-5">
-                <header class="max-w-370 mt-auto mb-xl-8 title-dash">
-                  <h4 class="display-7 mb-3 font-weight-semi-bold">Những cuốn sách được nhiều bạn đọc bỏ túi</h4>
-                </header>
-              </div>
-              <div class="col-md-7 col-lg-8 mb-md-5">
-                <div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 mx-n2">
-                  <div class="col px-2 mb-5 mb-md-0">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img3.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">Chicago Med</a></div>
-                    </div>
-                  </div>
-                  <div class="col px-2 mb-5 mb-md-0">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img9.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">The Last Man on the earth</a></div>
-                    </div>
-                  </div>
-                  <div class="col px-2 mb-5 mb-md-0 d-md-none d-lg-block">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img8.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">Unbreakable Kimmy Schmidt</a></div>
-                    </div>
-                  </div>
-                  <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img7.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">House of cards</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 mx-n2">
-                  <div class="col px-2 mb-5 mb-md-0">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img6.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">Chicago Med</a></div>
-                    </div>
-                  </div>
-                  <div class="col px-2 mb-5 mb-md-0">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img5.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">The Last Man on the earth</a></div>
-                    </div>
-                  </div>
-                  <div class="col px-2 mb-5 mb-md-0">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img4.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">Unbreakable Kimmy Schmidt</a></div>
-                    </div>
-                  </div>
-                  <div class="col px-2 mb-5 mb-md-0 d-md-none d-lg-block">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img3.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">House of cards</a></div>
-                    </div>
-                  </div>
-                  <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img2.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">Chicago Med</a></div>
-                    </div>
-                  </div>
-                  <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                    <div class="product">
-                      <div class="product-image mb-2">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("222126img1.jpg", class: "img-fluid lazy-load") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12 mb-1">
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="product-title font-weight-bold font-size-1"><a href="">The Last Man on the earth</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -809,20 +619,6 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-xl-7 d-none d-lg-flex align-items-center justify-content-center">
-        <div class="">
-          <a
-            class="js-fancybox btn btn-play d-flex align-items-center justify-content-center rounded-circle"
-            href="javascript:;"
-            data-hs-fancybox-options='{
-              "src": "//youtube.com/0qisGSwZym4",
-              "speed": 700
-            }'
-          >
-            <i class="fas fa-play text-primary"></i>
-          </a>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -841,8 +637,8 @@
         <div class="tab-nav__v3 mb-3">
           <ul class="nav flex-nowrap flex-lg-wrap justify-content-start overflow-auto align-items-center" role="tablist">
             <li class="nav-item flex-shrink-0 flex-shrink-md-1">
-              <a class="nav-link active pl-2" id="pills-one-code-features-example6-tab" data-toggle="pill" href="#pills-one-code-features-example6" role="tab" aria-controls="pills-one-code-features-example6" aria-selected="true">
-                New Arrivals
+              <a class="nav-link active pl-2">
+                Bộ sưu tập
               </a>
             </li>
           </ul>
@@ -858,270 +654,58 @@
             >
               <div class="js-slide">
                 <div class="row mx-n2">
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
-                           <%= image_tag("122183img1.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
+                  <% @posts_slider.each do |post|%>
+                    <div class="col-6 col-md-4 col-lg px-2">
+                      <div class="product mt-2">
+                        <div class="product-image mb-1">
+                          <%= link_to post_path(post), class: "d-inline-block position-relative stretched-link" do %>
+                            <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12"><%= post.tag %></span>
+                            <%= image_tag(post.image_cover, class: "img-fluid w-100 lazy-header", alt: "Image cover #{post.name}") %>
+                          <% end %>
+                        </div>
+                        <div class="product-meta font-size-12">
+                          <span>
+                            <%= link_to author_path(post.author), class: "h-g-primary" do %>
+                              <%= post.author.name %>
+                            <% end %>
+                          </span>
+                        </div>
+                        <div class="font-weight-bold font-size-1">
+                          <%= link_to post_path(post), class: "text-dark", title: "#{post.name}" do %>
+                            <%= truncate(post.name, length: 22, omission: "..." ) %>
+                          <% end %>
+                        </div>
                       </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Adventures</a></span>
-                        <span><a href="" class="h-g-primary">History</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Spiderman 3</a></div>
                     </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
-                           <%= image_tag("122183img2.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Drama</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Phantom Thread</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("122183img3.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Made Normal</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                           <%= image_tag("122183img4.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Fantacy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Every Day</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
-                           <%= image_tag("122183img5.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Love, Simon</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("122183img6.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">The Tale</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("122183img7.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Mad</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                           <%= image_tag("122183img8.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">The Lost Viking</a></div>
-                    </div>
-                  </div>
+                  <% end %>
                 </div>
               </div>
               <div class="js-slide">
                 <div class="row mx-n2">
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
-                           <%= image_tag("122183img2.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
+                  <% @posts_slider.each do |post|%>
+                    <div class="col-6 col-md-4 col-lg px-2">
+                      <div class="product mt-2">
+                        <div class="product-image mb-1">
+                          <%= link_to post_path(post), class: "d-inline-block position-relative stretched-link" do %>
+                            <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12"><%= post.tag %></span>
+                            <%= image_tag(post.image_cover, class: "img-fluid w-100 lazy-header", alt: "Image cover #{post.name}") %>
+                          <% end %>
+                        </div>
+                        <div class="product-meta font-size-12">
+                          <span>
+                            <%= link_to author_path(post.author), class: "h-g-primary" do %>
+                              <%= post.author.name %>
+                            <% end %>
+                          </span>
+                        </div>
+                        <div class="font-weight-bold font-size-1">
+                          <%= link_to post_path(post), class: "text-dark", title: "#{post.name}" do %>
+                            <%= truncate(post.name, length: 22, omission: "..." ) %>
+                          <% end %>
+                        </div>
                       </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Adventures</a></span>
-                        <span><a href="" class="h-g-primary">History</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Spiderman 3</a></div>
                     </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
-                          <%= image_tag("122183img3.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Drama</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Phantom Thread</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("122183img4.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Made Normal</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("122183img5.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Fantacy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Every Day</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
-                          <%= image_tag("122183img6.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Love, Simon</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("122183img7.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">The Tale</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("122183img8.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">Mad</a></div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg px-2">
-                    <div class="product mt-2">
-                      <div class="product-image mb-1">
-                        <a href="" class="d-inline-block position-relative stretched-link">
-                          <%= image_tag("122183img1.jpg", class: "img-fluid w-100 lazy-header", alt: "Image Description") %>
-                        </a>
-                      </div>
-                      <div class="product-meta font-size-12">
-                        <span><a href="" class="h-g-primary">2020</a></span>
-                        <span><a href="" class="h-g-primary">Action</a></span>
-                        <span><a href="" class="h-g-primary">Comedy</a></span>
-                        <span><a href="" class="h-g-primary">Mystery</a></span>
-                      </div>
-                      <div class="font-weight-bold font-size-1"><a class="text-dark" href="">The Lost Viking</a></div>
-                    </div>
-                  </div>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -1132,7 +716,7 @@
   </div>
 </section>
 <section>
-  <div class="bg-gray-1100">
+  <div class="bg-gray-1100 pt-5">
     <div class="container px-md-6 pt-lg-3 mt-lg-1">
       <div class="row">
         <div class="col-lg-4 col-xl-3">
@@ -1156,8 +740,8 @@
                       </h6>
                       <div class="d-flex align-items-center d-md-block">
                         <div class="text-lh-1dot1">
-                          <%= link_to account_path(post.account), class: "font-size-13 font-weight-bold" do %>
-                            <%= post.account.name %>
+                          <%= link_to author_path(post.author), class: "font-size-13 font-weight-bold" do %>
+                            <%= post.author.name %>
                           <% end %>
                         </div>
                         <div>
@@ -1181,14 +765,14 @@
             </header>
             <div class="mb-6 mb-lg-9">
               <%= link_to post_path(@post_new_first), class: "d-block mb-4" do %>
-                <%= image_tag(url_for(@post_new_first.banner_cover), class: "img-fluid lazy-load") %>
+                <%= image_tag(url_for(@post_new_first.banner_cover), class: "img-fluid lazy-header") %>
               <% end %>
               <h2 class="product--title font-weight-semi-bold font-size-26 text-lh-1 mb-2 mb-md-0">
                 <%= link_to @post_new_first.name, post_path(@post_new_first) %>
               </h2>
               <div class="mb-2 pb-1">
-                <%= link_to account_path(@post_new_first.account), class: "font-weight-bold font-size-13" do %>
-                  <span><%= @post_new_first.account.name %></span>
+                <%= link_to author_path(@post_new_first.author), class: "font-weight-bold font-size-13" do %>
+                  <span><%= @post_new_first.author.name %></span>
                 <% end %>
                 <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                   <span><%= @post_new_first.created_at.strftime(Settings.date.formats) %></span>
@@ -1211,8 +795,8 @@
                       <%= link_to post.name, post_path(post) %>
                     </h6>
                     <div class="mb-2 pb-1">
-                      <%= link_to account_path(post.account), class: "font-weight-bold font-size-13" do %>
-                        <span><%= post.account.name %></span>
+                      <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
+                        <span><%= post.author.name %></span>
                       <% end %>
                       <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                         <span><%= post.created_at.strftime(Settings.date.formats) %></span>

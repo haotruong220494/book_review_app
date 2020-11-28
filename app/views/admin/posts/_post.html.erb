@@ -8,7 +8,7 @@
   <td style="width: 10%"><%= truncate(post.description , length: 30, omission: '...') %></td>
   <td style="width: 10%"><%= post.category && post.category.title %></td>
   <td style="width: 10%"><%= post.account && post.account.name %></td>
-  <td style="width: 10%"><%= post.buy_link %></td>
+  <td style="width: 10%"><%= post.author && post.author.name %></td>
   <td class="action-article" style="width: 10%;">
     <%= link_to edit_admin_post_path(post) do %>
       <%= content_tag :i, "", class: "far fa-edit text-info" %>

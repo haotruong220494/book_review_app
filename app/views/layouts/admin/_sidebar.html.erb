@@ -56,6 +56,16 @@
               <span class="badge badge-success right"><%= Account.all.size %></span>
             </p>
           <% end %>
+        </li> 
+        <li class="nav-item">
+          <%= link_to admin_authors_path, class: "nav-link" do %>
+            <i class="nav-icon far fa-user"></i>
+            <p>
+              Authors
+              <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-warning right"><%= Author.all.size %></span>
+            </p>
+          <% end %>
         </li>
       </ul>
     </nav>

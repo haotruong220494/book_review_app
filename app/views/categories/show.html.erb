@@ -36,7 +36,7 @@
                     <%= post.name %>
                   <% end %>
                 </h6>
-                <a class="font-size-13 font-weight-bold" href=""><%= post.account.name %></a>
+                <a class="font-size-13 font-weight-bold" href=""><%= post.author.name %></a>
                 <a class="product-comment font-weight-normal font-size-13 font-italic h-g-primary" href="javascript:;"><%= post.created_at.strftime(Settings.date.formats) %></a>
               </div>
             </div>
@@ -68,7 +68,7 @@
                   </h6>
                   <div class="mb-2 pb-1">
                     <a href="" class="font-weight-bold font-size-13">
-                      <span><%= post.account.name %></span>
+                      <span><%= post.author.name %></span>
                     </a>
                     <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
                       <span><%= post.created_at.strftime(Settings.date.formats) %></span>
@@ -106,8 +106,8 @@
                         </h6>
                         <div class="d-flex align-items-center d-xl-block">
                           <div class="text-lh-1dot1">
-                            <%= link_to account_path(post.account), class: "font-size-13 font-weight-bold" do %>
-                              <span><%= post.account.name %></span>
+                            <%= link_to author_path(post.author), class: "font-size-13 font-weight-bold" do %>
+                              <span><%= post.author.name %></span>
                             <% end %>
                           </div>
                           <div>

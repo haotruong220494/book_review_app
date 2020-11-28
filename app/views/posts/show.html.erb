@@ -20,7 +20,7 @@
           </h6>
           <div class="mb-3 pb-1">
             <a href="" class="font-weight-semi-bold font-size-13">
-              <span><%= @post.account.name %></span>
+              <span><%= @post.author.name %></span>
             </a>
             <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
               <span><%= @post.created_at.strftime(Settings.date.formats) %></span>
@@ -29,12 +29,12 @@
           <p class="font-size-15 font-weight-bold mb-3 pb-1">
             <%= @post.description %>
           </p>
-          <p class="font-size-1 mb-3 pb-1">
-             <%= raw(@post.content) %>
-          </p>
+          <%= raw(@post.content) %>
         </div>
-        <div class="mb-2" ><%= image_tag(asset_path("like.png"), class: "img-fluid lazy-header", alt: "like & share", style: "width: 30%" )%></div>
-        <div class="fb-like" 
+        <div class="mb-2 block-social" >
+          <%= image_tag(asset_path("like.png"), class: "img-fluid lazy-header", alt: "like & share" )%>
+        </div>
+        <div class="fb-like show-post-share" 
           data-href="<%= post_path(@post) %>" 
           data-width=""
           data-layout="standard" 
@@ -49,15 +49,15 @@
         <div class="mb-5 mb-lg-7">
           <div class="block-account">
             <div class="top">
-              <a href="" title="" class="ava">
+              <%= link_to account_path(@post.account), class: "ava" do %>
                 <% if @post.account.image.attached? %>
                   <%= image_tag(@post.account.image, class: "lazy-header", alt: "Avatar") %>
                 <% else %>
                   <%= image_tag(@post.account.avatar, class: "lazy-header", alt: "Avatar") %>
                 <% end %>
                 <h3 class="name"><%= @post.account.name %></h3>
-              </a>
-              <span class="ranking"><%= rank_enum_name(@post.account.rank) %></span>
+              <% end %>
+              <span class="ranking <%= @post.account.rank %>"><%= rank_enum_name(@post.account.rank) %></span>
               <div class="description-account">
                 ✎﹏ <%= @post.account.description %> ﹏✮
               </div>

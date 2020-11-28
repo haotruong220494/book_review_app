@@ -37,10 +37,42 @@
   font-weight: 500;
   margin-top: 22px;
 }
-#basicDropdownHover .top .name span {
-  color: #999;
+#basicDropdownHover .top span {
   display: block;
   font-weight: 400;
+}
+#basicDropdownHover .top span.basic {
+  color: #e47b75;
+}
+#basicDropdownHover .top span.basic:before {
+  content: "\f091";
+}
+#basicDropdownHover .top span.copper {
+  color: #7002de;
+}
+#basicDropdownHover .top span.copper:before {
+  content: "\f005";
+}
+#basicDropdownHover .top span.silver {
+  color: #ec5105;
+}
+#basicDropdownHover .top span.silver::before {
+  content: "\f521";
+}
+#basicDropdownHover .top span.gold {
+  color: #0312da;
+}
+#basicDropdownHover .top span.gold::before {
+  content: "\f521";
+}
+
+#basicDropdownHover .top span::before {
+  display: inline-block;
+  font-family: "font awesome 5 free";
+  font-size: .75rem;
+  font-weight: 900;
+  margin-right: .625rem;
+  transition: .3s ease;
 }
 #basicDropdownHover .info {
   padding: 24px 0;
@@ -160,10 +192,33 @@
   font-family: "font awesome 5 free";
   font-size: .75rem;
   font-weight: 900;
-  margin-left: .5rem;
-  margin-right: .625rem;
+  margin-right: .425rem;
   content: "\f091";
   transition: .3s ease;
+}
+.block-account .top span.basic {
+  color: #e47b75;
+}
+.block-account .top span.basic:before {
+  content: "\f091";
+}
+.block-account .top span.copper {
+  color: #7002de;
+}
+.block-account .top span.copper:before {
+  content: "\f005";
+}
+.block-account .top span.silver {
+  color: #ec5105;
+}
+.block-account .top span.silver::before {
+  content: "\f521";
+}
+.block-account .top span.gold {
+  color: #0312da;
+}
+.block-account .top span.gold::before {
+  content: "\f521";
 }
 .block-account .top .description-account {
   margin-top: 10px;
@@ -171,17 +226,67 @@
 .block-account .bottom-social {
   text-align: center;
 }
-.block-account .bottom-social ul {
+.block-account .bottom-social ul,
+.account-social ul {
   margin: 0;
   padding: 0;
 }
-.block-account .bottom-social ul li {
+.block-account .bottom-social ul li,
+.account-social ul li {
   display: inline-block;
   list-style-type: none;
   padding: 0 10px;
   font-size: 30px;
 }
 
+.block-social {
+	width: 30%;
+}
+.show-post-share,
+.show-post-share span,
+.show-post-share iframe,
+.show-post-share table {
+	width: 100% !important;
+}
+.column-count-6 {
+  -webkit-column-count: 6; 
+  -moz-column-count: 6;
+  column-count: 6;
+  list-style-type: none;
+}
+.avatar-account {
+  margin-top: -10%;
+  display: flex;
+  align-items: center;
+}
+.avatar-account img {
+  border-radius: 50%;
+  width: 210px;
+  height: 210px;
+}
+.account-name {
+  font-size: 34px;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 25px;
+  margin-top: 12px;
+}
+.introduce-account {
+  background-color: #fff;
+  font-size: 14px;
+  padding: 22px 25px 20px 25px;
+  position: relative;
+  width: 100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+}
+.introduce-account .gt i {
+  padding: 4px;
+  background: #0e8cb9;
+  color: #fff;
+  border-radius: 50%;
+  margin-right: 5px;
+}
 @media screen and (max-width: 767px) {
   .slick-arrow-right {
     right: 30px !important;
@@ -201,6 +306,18 @@
   .space-bottom-5 {
     padding-bottom: 0 !important;
   }
+  .block-social {
+		width: 90%;
+	}
+	.mx-n3 {
+    margin-right: 0 !important;
+	}
+	.px-3 {
+    padding-right: 0 !important; 
+	}
+	.h-sm-none {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 375px) {

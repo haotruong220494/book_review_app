@@ -1,0 +1,10 @@
+<% provide :button_text, "Create" %>
+<% provide :form_type, "Form Create" %>
+<%= content_for :breadcum_first, "Home" %>
+<%= content_for :breadcum_first_link, admin_root_path %>
+<%= content_for :breadcum_second, "Author" %>
+<%= content_for :breadcum_second_link, admin_authors_path %>
+<%= content_for :breadcum_third, "Create" %>
+
+<%= render "layouts/breadcrumb_admin"%>
+<%= render "form" %>

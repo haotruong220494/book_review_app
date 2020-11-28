@@ -56,7 +56,8 @@ label.required:after {
 }
 
 #post_category_id,
-#post_account_id {
+#post_account_id,
+#post_author_id {
   border: 1px solid #ced4da;
   padding: 0.46875rem 0.75rem;
   height: calc(2.25rem + 2px);

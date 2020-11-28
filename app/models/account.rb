@@ -2,11 +2,13 @@ class Account < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
-  ATTRS = [:description, :fb_link, :insta_fb, :image, :rank]
+  ATTRS = [:description, :fb_link, :insta_fb, :image, :rank, :image_cover]
 
   has_many :posts
   has_one :image
+  has_one :image_cover
   has_one_attached :image
+  has_one_attached :image_cover
   enum rank: { basic: 1, copper: 2, silver: 3, gold: 4 }
 
   def self.create_from_provider_data provider_data
