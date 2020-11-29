@@ -258,11 +258,15 @@
   margin-top: -10%;
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 2%;
 }
 .avatar-account img {
   border-radius: 50%;
   width: 210px;
   height: 210px;
+  padding: 1px;
+	background: #e8e8e8;
 }
 .account-name {
   font-size: 34px;
@@ -270,15 +274,17 @@
   color: #fff;
   margin-left: 25px;
   margin-top: 12px;
+  text-shadow: 1px 1px 2px #2e8cb9, 0 0 20px #2e8cb9, 0 0 5px #fff;
 }
 .introduce-account {
   background-color: #fff;
   font-size: 14px;
   padding: 22px 25px 20px 25px;
-  position: relative;
   width: 100%;
   border: 1px solid #e8e8e8;
   border-radius: 6px;
+  position: sticky;
+  top: 29%;
 }
 .introduce-account .gt i {
   padding: 4px;
@@ -317,6 +323,28 @@
 	}
 	.h-sm-none {
 		display: none;
+	}
+	.d-sm-flex {
+
+	}
+	.avatar-account {
+    margin-top: -25%;
+    position: relative;
+    display: grid;
+    justify-content: center;
+	}
+	.bg-account {
+		height: 245px !important;
+	}
+	.avatar-account img {
+		width: 150px;
+		height: 150px;
+	}
+	.account-name {
+		font-size: 18px;
+	}
+	.introduce-account {
+		margin: 20px 0;
 	}
 }
 

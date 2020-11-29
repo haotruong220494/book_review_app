@@ -1,5 +1,5 @@
 <%= provide :title, @account.name  %>
-<div class="bg-img-hero"
+<div class="bg-img-hero bg-account"
   <% if @account.image_cover.attached? %>
     style="background-image: url('<%= url_for(@account.image_cover) %>'); height: 400px;"
   <% else %>
@@ -12,7 +12,7 @@
   	<img src="<%= url_for(@account.image) %>" alt="avatar">
   	<span class="account-name"><%= @account.name %></span>
   </div>
-  <div class="row mt-6 mb-6">
+  <div class="row mt-lg-6 mb-lg-6">
   	<div class="col-xl-4">
   		<div class="introduce-account">
   			<div class="gt">
