@@ -114,7 +114,7 @@
                             <% colllection_header.each do |post| %>
                               <li class="py-1">
                                 <%= link_to post_path(post), class: "h-b-primary py-1 font-size-14" do %>
-                                  <%= image_tag(post.image_cover, class: "img-fluid w-100 lazy-header", alt: "Image cover #{post.name}") %> 
+                                  <%= image_tag(post.image_cover, class: "img-fluid w-100 lazy-header", alt: "Image cover #{post.name}") %>
                                   <span class="h-sm-none"><%= truncate(post.name, length: 40, omission: "...") %></span>
                                 <% end %>
                               </li>
