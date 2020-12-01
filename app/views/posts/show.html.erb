@@ -30,6 +30,15 @@
             <%= @post.description %>
           </p>
           <%= raw(@post.content) %>
+          <% if @post.buy_link.blank? %>
+            <div class="buy-tiki" >
+              <%= link_to @post.buy_link do %>
+                <i class="far fa-hand-point-right"></i>
+                <span>Đặt sách qua</span>
+                <img src="<%= asset_path("tiki.png") %>" style="width: auto;">
+              <% end %>
+            </div>
+          <% end %>
         </div>
         <div class="mb-2 block-social" >
           <%= image_tag(asset_path("like.png"), class: "img-fluid lazy-header", alt: "like & share" )%>
