@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     @q = Post.ransack params[:q]
     @posts = @q.result.page(params[:page]).per Settings.per_page.default
+    @search_key = params[:q][:name_cont]
   end
 
   def show

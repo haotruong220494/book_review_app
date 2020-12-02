@@ -14,7 +14,7 @@
               <div class="row mb-4">
                 <div class="col-lg-6">
                   <%= link_to post_path(post), class: "d-block mb-3 mb-lg-0" do %>
-                    <img src="<%= url_for(post.image_cover_cate) %>"  class="img-fluid lazy-load" alt="image cover <%= post.name %>">
+                    <img src="<%= url_for(post.image_cover_cate) %>"  class="img-fluid" alt="image cover <%= post.name %>">
                   <% end %>
                 </div>
                 <div class="col-lg-6 d-flex flex-column justify-content-center">

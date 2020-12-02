@@ -13,7 +13,7 @@ $(function(){
 
   $("#search_post").on("click", function(){
   	var textSearch = $("#searchproduct-item").val();
-  	
+
   	$.ajax({
       url: "/posts",
       method: "GET",
