@@ -259,7 +259,7 @@
   display: flex;
   align-items: center;
   position: sticky;
-  top: 2%;
+  top: 8%;
 }
 .avatar-account img {
   border-radius: 50%;
@@ -284,7 +284,7 @@
   border: 1px solid #e8e8e8;
   border-radius: 6px;
   position: sticky;
-  top: 29%;
+  top: 35%;
 }
 .introduce-account .gt i {
   padding: 4px;
