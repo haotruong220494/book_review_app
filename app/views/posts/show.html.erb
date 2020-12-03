@@ -30,7 +30,7 @@
             <%= @post.description %>
           </p>
           <%= raw(@post.content) %>
-          <% if @post.buy_link.blank? %>
+          <% if @post.buy_link.present? %>
             <div class="buy-tiki" >
               <%= link_to @post.buy_link do %>
                 <i class="far fa-hand-point-right"></i>
@@ -73,8 +73,8 @@
             </div>
             <div class="bottom-social">
               <ul>
-                <li><a href="<%= @post.account.fb_link %>" style="color: #4367b2;"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="<%= @post.account.fb_link %>" style="color: #c72e90;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="<%= @post.account.fb_link %>" style="color: #4367b2;" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="<%= @post.account.fb_link %>" style="color: #c72e90;" target="_blank"><i class="fab fa-instagram"></i></a></li>
               </ul>
             </div>
           </div>
