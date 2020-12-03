@@ -4,15 +4,24 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="Hảo Trương">
-  <title><%= yield(:title) %> | Kênh đọc</title>
+  <title><%= yield(:title) %> | Kênh đọc - trang đánh giá sách hay nhất nên đọc</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="content-language" content="vi" />
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="Bạn cô đơn ư? Đừng lo lắng. Mọi cuốn sách đều sẵn sàng kết thân với bạn, kenhdoc.com nơi kết nối bạn với những cuốn sách hay, những cuốn sách có thể thay đổi cuộc đời bạn. Bạn chỉ cần đến với chúng tớ còn review sách cứ để kênh đọc lo.">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Review Sách - Bạn cô đơn ư? Đừng lo lắng. Mọi cuốn sách đều sẵn sàng kết thân với bạn, kenhdoc.com nơi kết nối bạn với những cuốn sách hay, những cuốn sách có thể thay đổi cuộc đời bạn. Bạn chỉ cần đến với chúng tớ còn review sách cứ để kênh đọc lo.">
+  <meta name="Keywords" content="review sách">
+  <meta name="author" content="Kênh Đọc | Review Sách Hay">
+  <meta name="robots" content="index, archive, follow, noodp">
+  <meta name="googlebot" content="index,archive,follow,noodp">
+  <meta name="msnbot" content="all,index,follow">
+  <meta property="og:title" content="<%= yield(:title) %> | Kênh đọc - trang đánh giá sách hay nhất nên đọc">
+  <meta property="og:description" content="Review Sách - Bạn cô đơn ư? Đừng lo lắng. Mọi cuốn sách đều sẵn sàng kết thân với bạn, kenhdoc.com nơi kết nối bạn với những cuốn sách hay, những cuốn sách có thể thay đổi cuộc đời bạn. Bạn chỉ cần đến với chúng tớ còn review sách cứ để kênh đọc lo.">
+  <meta property="og:type" content="Library">
+  <meta property="og:site_name" content="Review sách - Chuyên trang đánh giá sách hay nhất nên đọc">
+  <meta property="og:url" href="https://kenhdoc.com/" />
   <link rel="canonical" href="https://kenhdoc.com/" />
   <meta property="og:image" content="<%= yield(:image) %>">
-  <%= favicon_link_tag asset_path("favicon3232.jpg"), rel: "icon", type: "image/x-icon" %>
+  <%= favicon_link_tag asset_path("favicon.jpg"), rel: "icon", type: "image/x-icon" %>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Open+Sans:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
