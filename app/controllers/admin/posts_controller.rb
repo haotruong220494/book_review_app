@@ -1,5 +1,5 @@
 class Admin::PostsController < Admin::BaseController
-  before_action :load_post, only: [:edit, :update]
+  before_action :load_post, only: [:edit, :update, :destroy]
 
   def index
     @q = Post.ransack params[:q]
@@ -33,7 +33,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def destroy
-    Post.find_by(id: params[:id]).destroy
+    Post.find_by_id(params[:id].delete("^0-9").to_i).destroy
     flash[:success] = "Delete Post Success."
     redirect_to admin_posts_path
   end
