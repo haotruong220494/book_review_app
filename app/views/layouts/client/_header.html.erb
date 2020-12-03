@@ -39,12 +39,12 @@
 
                 <div class="hs-mega-menu dropdown-menu w-100" aria-labelledby="homeMegaMenu">
                   <div class="container px-4 px-md-5 space-1">
-                    <div class="row row-cols-xl-5 text-md-center">
+                    <div class="row row-cols-xl-5 text-md-center cate-header">
                       <% cate_header.each do |category|%>
                         <div class="col-md-6 col-lg-3 col-xl border-right border-w-lg-d-0">
                           <a href="<%= category_path(category) %>" class="h-g1-primary d-block mb-4">
                             <% if category.image.attached? %>
-                            <%= image_tag(category.image, class: "d-none d-md-block img-fluid mb-3 rounded-sm shadow-2 lazy-header")%>
+                            <%= image_tag(category.image, class: "d-none d-md-block img-fluid mb-3 rounded-sm lazy-header")%>
                             <% end %>
                             <div class="h-g1-primary font-size-13 font-weight-bold">
                               <%= category.title %>

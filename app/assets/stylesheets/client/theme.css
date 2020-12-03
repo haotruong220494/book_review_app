@@ -304,6 +304,9 @@
 .buy-tiki a span {
   padding-right: 8px;
 }
+.cate-header .border-right:last-child {
+  border-right: none !important;
+}
 @media screen and (max-width: 767px) {
   .slick-arrow-right {
     right: 30px !important;
