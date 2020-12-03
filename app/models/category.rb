@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
   ATTRS = [:title, :slug, :description, :image, :banner_cover, :location]
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_one :image
   has_one :banner_cover
   has_one_attached :image
