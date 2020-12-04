@@ -1,5 +1,5 @@
 <%= provide :title, "Reivew " + @post.name.downcase  %>
-
+<%= provide :image, asset_path('kenhdoc.jpg') %>
 <%= content_for :breadcum_first, "Trang chủ" %>
 <%= content_for :breadcum_first_link, root_path %>
 <%= content_for :breadcum_second, @post.category.title %>

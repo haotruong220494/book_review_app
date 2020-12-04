@@ -1,7 +1,9 @@
+<%= provide :title, "Tìm kiếm" %>
+<%= provide :image, asset_path('kenhdoc.jpg') %>
 <%= content_for :breadcum_first, "Trang chủ" %>
 <%= content_for :breadcum_first_link, root_path %>
 <%= content_for :breadcum_second, "Kết quả tìm kiếm từ khóa _#{@search_key}" %>
-<%= provide :title, "Tìm kiếm" %>
+
 <div class="bg-img-hero" style="background-image: url('<%= asset_path("banner-search.jpg")%>'); height: 315px;"></div>
 <section class="blog-post-tab-with-Sidebar mb-7 mb-xl-14">
   <div class="container px-md-5">

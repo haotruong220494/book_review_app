@@ -1,4 +1,6 @@
 <%= provide :title, @author.name  %>
+<%= provide :image, asset_path('kenhdoc.jpg') %>
+
 <div class="bg-img-hero"
   <% if @author.image.attached? %>
     style="background-image: url('<%= url_for(@author.image) %>'); height: 600px;"
