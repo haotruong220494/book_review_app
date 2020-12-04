@@ -13,5 +13,6 @@ class ClientController < ApplicationController
   	@posts_classic_last = Category.cate_show("classic").last.posts.offset(12).limit(7)
     @posts_youth = Category.cate_show("youth").last.posts.limit(10)
     @posts_youth_slick = Category.cate_show("youth").last.posts.offset(10)
+    @posts_general = Category.cate_show("general").last.posts.limit(1)
   end
 end
