@@ -1,4 +1,5 @@
 class ErrorsController < ApplicationController
+	layout "errors"
   def file_not_found
   end
 
