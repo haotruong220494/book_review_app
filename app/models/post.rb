@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 	ATTRS = [:name, :description, :content, :slug, :category_id, :account_id, :image_cover,
-  	:banner_cover, :tag, :author_id, :buy_link, :release_date, :image_cover_cate, 
-    :thumb_slider_image, :bg_slider_image, :highlight_image]
+  	:banner_cover, :tag, :author_id, :buy_link, :release_date, :page_view, :image_cover_cate, 
+    :thumb_slider_image, :bg_slider_image, :highlight_image, :image_general]
 
   has_one :image_cover
   has_one :banner_cover
@@ -9,12 +9,14 @@ class Post < ApplicationRecord
   has_one :thumb_slider_image
   has_one :bg_slider_image
   has_one :highlight_image
+  has_one :image_general
   has_one_attached :image_cover
   has_one_attached :banner_cover
   has_one_attached :image_cover_cate
   has_one_attached :thumb_slider_image
   has_one_attached :bg_slider_image
   has_one_attached :highlight_image
+  has_one_attached :image_general
 
   belongs_to :category
   belongs_to :account

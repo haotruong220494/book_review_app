@@ -1,147 +1,87 @@
-<section class="mb-6 mb-xl-9 pb-xl-1">
+<section class="pb-xl-1 mt-4">
   <div class="container px-md-5">
     <div class="mx-md-1">
       <div class="row">
         <div class="col-lg-12">
           <div class="mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
-              <h5 class="font-size-24 font-weight-medium font-secondary mb-0">Review tổng hợp</h5>
+              <h5 class="font-size-24 font-weight-medium font-secondary mb-0">Sách hay mới nhất</h5>
               <div class="border-top col p-0 mx-3 border-gray-3600"></div>
-              <a href="#" class="h-g-primary font-size-1 font-weight-medium font-secondary">Xem tất cả</a>
+              <%= link_to posts_path, class: "h-g-primary font-size-1 font-weight-medium font-secondary" do %>
+                Xem tất cả
+              <% end %>
             </div>
             <div class="row">
               <div class="col-xl-6">
                 <div class="mb-5 mb-xl-0">
-                  <a class="d-block mb-3 pb-1" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                    <img class="img-fluid" src="../../assets/img/345x270/img1.jpg" alt="Image-Description" />
-                  </a>
+                  <%= link_to post_path(@post_new_general), class: "d-block mb-3 pb-1" do %>
+                    <%= image_tag(@post_new_general.image_general, class: "img-fluid lazy-header", alt: "Ảnh bìa #{@post_new_general.name}") %>
+                  <% end %>
                   <h6 class="product_title font-size-22 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                    <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Whats More, That Isnt Even The Only Possible Callback</a>
+                    <%= link_to post_path(@post_new_general) do %>
+                      <%= @post_new_general.name %>
+                    <% end %>
                   </h6>
                   <div class="mb-2 pb-1">
-                    <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                      <span>TV Series</span>
-                    </a>
-                    <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span>August 5 2020</span>
+                    <%= link_to author_path(@post_new_general.author), class: "font-weight-bold font-size-13" do %>
+                      <span><%= @post_new_general.author.name %></span>
+                    <% end %>
+                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                      <span><%= @post_new_general.created_at.strftime(Settings.date.formats) %></span>
                     </a>
                   </div>
                   <p class="font-size-1 mb-0">
-                    Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.
+                    <%= @post_new_general.description %>
                   </p>
                 </div>
               </div>
-              <div class="col-xl-3">
-                <div class="d-md-flex mb-4">
-                  <a class="d-block mb-3 mb-md-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                    <img class="img-fluid" src="../../assets/img/175x115/img1.jpg" alt="Image-Description" />
-                  </a>
-                  <div class="ml-md-3">
-                    <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Whats More, That Isnt Even The Only Possible Callback</a>
-                    </h6>
-                    <div class="mb-2 pb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                        <span>TV Series</span>
-                      </a>
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                        <span>August 5 2020</span>
-                      </a>
+              <div class="col-xl-3 d-none d-xl-block">
+                <% @post_new_nth_general.each do |post| %>
+                  <div class="d-md-flex mb-4">
+                    <%= link_to post_path(post), class: "d-block mb-3 mb-md-0 col-xl-6 pd-0 pb-1" do %>
+                      <%= image_tag(post.highlight_image, class: "img-fluid lazy-header", alt: "Ảnh bìa #{post.name}") %>
+                    <% end %>
+                    <div class="ml-md-3 col-xl-6 pd-0">
+                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
+                        <%= link_to post_path(post) do %>
+                          <%= post.name %>
+                        <% end %>
+                      </h6>
+                      <div class="mb-2 pb-1">
+                        <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
+                          <span><%= post.author.name %></span>
+                        <% end %>
+                        <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                          <span><%= post.created_at.strftime(Settings.date.formats) %></span>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="d-md-flex mb-4">
-                  <a class="d-block mb-3 mb-md-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                    <img class="img-fluid" src="../../assets/img/175x115/img2.jpg" alt="Image-Description" />
-                  </a>
-                  <div class="ml-md-3">
-                    <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Whats More, That Isnt Even The Only Possible Callback</a>
-                    </h6>
-                    <div class="mb-2 pb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                        <span>TV Series</span>
-                      </a>
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                        <span>August 5 2020</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-md-flex mb-0">
-                  <a class="d-block mb-3 mb-md-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                    <img class="img-fluid" src="../../assets/img/175x115/img3.jpg" alt="Image-Description" />
-                  </a>
-                  <div class="ml-md-3">
-                    <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Whats More, That Isnt Even The Only Possible Callbackg</a>
-                    </h6>
-                    <div class="mb-2 pb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                        <span>TV Series</span>
-                      </a>
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                        <span>August 5 2020</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
               </div>
-              <div class="col-xl-3">
-                <div class="d-md-flex mb-4">
-                  <a class="d-block mb-3 mb-md-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                    <img class="img-fluid" src="../../assets/img/175x115/img1.jpg" alt="Image-Description" />
-                  </a>
-                  <div class="ml-md-3">
-                    <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Whats More, That Isnt Even The Only Possible Callback</a>
-                    </h6>
-                    <div class="mb-2 pb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                        <span>TV Series</span>
-                      </a>
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                        <span>August 5 2020</span>
-                      </a>
+              <div class="col-xl-3 d-none d-xl-block">
+                <% @post_new_last_general.each do |post| %>
+                  <div class="d-md-flex mb-4">
+                    <%= link_to post_path(post), class: "d-block mb-3 mb-md-0 col-xl-6 pd-0 pb-1" do %>
+                      <%= image_tag(post.highlight_image, class: "img-fluid lazy-header", alt: "Ảnh bìa #{post.name}") %>
+                    <% end %>
+                    <div class="ml-md-3 col-xl-6 pd-0">
+                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
+                        <%= link_to post_path(post) do %>
+                          <%= post.name %>
+                        <% end %>
+                      </h6>
+                      <div class="mb-2 pb-1">
+                        <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
+                          <span><%= post.author.name %></span>
+                        <% end %>
+                        <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                          <span><%= post.created_at.strftime(Settings.date.formats) %></span>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="d-md-flex mb-4">
-                  <a class="d-block mb-3 mb-md-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                    <img class="img-fluid" src="../../assets/img/175x115/img2.jpg" alt="Image-Description" />
-                  </a>
-                  <div class="ml-md-3">
-                    <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Whats More, That Isnt Even The Only Possible Callback</a>
-                    </h6>
-                    <div class="mb-2 pb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                        <span>TV Series</span>
-                      </a>
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                        <span>August 5 2020</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-md-flex mb-0">
-                  <a class="d-block mb-3 mb-md-0" href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">
-                    <img class="img-fluid" src="../../assets/img/175x115/img3.jpg" alt="Image-Description" />
-                  </a>
-                  <div class="ml-md-3">
-                    <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html">Whats More, That Isnt Even The Only Possible Callbackg</a>
-                    </h6>
-                    <div class="mb-2 pb-1">
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="font-weight-bold font-size-13">
-                        <span>TV Series</span>
-                      </a>
-                      <a href="https://demo2.madrasthemes.com/vodi-html/html-demo/blog/blog-single.html" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                        <span>August 5 2020</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
               </div>
             </div>
           </div>

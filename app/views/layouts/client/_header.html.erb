@@ -38,15 +38,15 @@
                 </a>
 
                 <div class="hs-mega-menu dropdown-menu w-100" aria-labelledby="homeMegaMenu">
-                  <div class="container px-4 px-md-5 space-1">
+                  <div class="container px-4 px-md-5 space-lg-1">
                     <div class="row row-cols-xl-5 text-md-center cate-header">
                       <% cate_header.each do |category|%>
-                        <div class="col-md-6 col-lg-3 col-xl border-right border-w-lg-d-0">
+                        <div class="col-md-6 col-lg-3 col-xl border-right border-w-lg-d-0 pb-1 pt-1">
                           <a href="<%= category_path(category) %>" class="h-g1-primary d-block">
                             <% if category.image.attached? %>
                             <%= image_tag(category.image, class: "d-none d-md-block img-fluid mb-3 rounded-sm lazy-header")%>
                             <% end %>
-                            <div class="h-g1-primary font-size-16 font-weight-bold">
+                            <div class="h-g1-primary font-size-23 font-weight-bold">
                               <%= category.title %>
                             </div>
                           </a>

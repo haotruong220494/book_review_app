@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_085022) do
+ActiveRecord::Schema.define(version: 2020_12_04_181952) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -128,6 +128,8 @@ ActiveRecord::Schema.define(version: 2020_11_28_085022) do
     t.string "bg_slider_image"
     t.string "highlight_image"
     t.bigint "author_id"
+    t.string "image_general"
+    t.string "page_view"
     t.index ["account_id"], name: "index_posts_on_account_id"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
