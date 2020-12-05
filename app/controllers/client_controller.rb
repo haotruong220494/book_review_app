@@ -3,16 +3,8 @@ class ClientController < ApplicationController
 
   def home
   	@posts_slider = Category.cate_show("collection").last.posts
-  	@post_new_first = Post.show_post_new_first[0]
-  	@post_news = Post.show_post_news
-  	@post_views = Post.show_post_views
-  	@posts_selective_first = Category.cate_show("selective").last.posts.limit(4)
-  	@posts_selective_last = Category.cate_show("selective").last.posts.offset(4)
-  	@posts_classic_first = Category.cate_show("classic").last.posts.limit(5)
-  	@posts_classic_nth_child = Category.cate_show("classic").last.posts.offset(5).limit(7)
-  	@posts_classic_last = Category.cate_show("classic").last.posts.offset(12).limit(7)
-    @posts_youth = Category.cate_show("youth").last.posts.limit(10)
-    @posts_youth_slick = Category.cate_show("youth").last.posts.offset(10)
-    @posts_general = Category.cate_show("general").last.posts.limit(1)
+    @post_new_general = Category.cate_show("general").last.posts.order(created_at: :desc).first
+    @post_new_nth_general = Category.cate_show("general").last.posts.order(created_at: :desc).offset(1).limit(5)
+    @post_new_last_general = Category.cate_show("general").last.posts.order(created_at: :desc).offset(6).limit(5)
   end
 end

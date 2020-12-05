@@ -3,7 +3,7 @@ class Admin::PostsController < Admin::BaseController
 
   def index
     @q = Post.ransack params[:q]
-    @posts = @q.result.page(params[:page]).per Settings.per_page.default
+    @posts = @q.result.page(params[:page]).order(created_at: :desc).per Settings.per_page.default
   end
 
   def new

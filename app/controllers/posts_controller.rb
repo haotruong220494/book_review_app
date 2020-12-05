@@ -3,8 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack params[:q]
-    @posts = @q.result.page(params[:page]).per Settings.per_page.default
-    @search_key = params[:q][:name_cont]
+    @posts = @q.result.page(params[:page]).order(created_at: :desc).per Settings.per_page.client
+    @search_key = params[:q][:name_cont] if params[:q].present?
   end
 
   def show

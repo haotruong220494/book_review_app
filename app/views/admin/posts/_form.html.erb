@@ -65,12 +65,20 @@
               autofocus: true %>
           </div>
         </div>
-
         <div class="form-group">
           <%= f.label :tag, class: "col-md-4 control-label" %>
           <div class="col-md-12">
             <%= f.input :tag, as: :string,
               input_html: { class: "form-control input-circle input-title", placeholder: "mới ra mắt, đặc sắc, bán chạy,..." },
+              label: false,
+              autofocus: true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :page_view, class: "col-md-4 control-label" %>
+          <div class="col-md-12">
+            <%= f.input :page_view, as: :string,
+              input_html: { class: "form-control input-circle input-title", placeholder: "To do: fake view" },
               label: false,
               autofocus: true %>
           </div>
@@ -195,7 +203,27 @@
         </div>
         <div class="form-group custom-file mb-3">
           <div class="row">
-            <label>Image cover cate highlight (222*126)</label>
+            <label>Ảnh hiển thị đầu tiên ở mục bài viết mới nhất (692*389)</label>
+            <% if @post.image_general.attached? %>
+              <div class="image-cover col-md-12">
+                <img src="<%= (url_for(@post.image_general)) %>">
+                <%= link_to 'Remove before change', delete_image_attachment_admin_post_url(@post.image_general.id),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% else %>
+              <div class="col-md-12">
+                <div>
+                  <%= f.file_field :image_general, accept: ".jpg,.jpeg,.gif,.png", class: "custom-file-input", id: "customFile" %>
+                  <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="form-group custom-file mb-3">
+          <div class="row">
+            <label>Ảnh hiển thị ở mục bài viết mới nhất (384*216)</label>
             <% if @post.highlight_image.attached? %>
               <div class="image-cover col-md-12">
                 <img src="<%= (url_for(@post.highlight_image)) %>">
@@ -213,7 +241,7 @@
             <% end %>
           </div>
         </div>
-
+        
         <div class="form-actions">
           <div class="col-md-12">
             <%= f.submit yield(:button_text)  , class: "btn btn-primary" %>
