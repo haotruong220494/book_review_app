@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<section class="blog-post mb-7 mb-xl-11">
+<section class="blog-post mb-7">
   <div class="container px-md-5">
     <div class="mx-md-1">
       <div class="row mb-5 mt-n7">
@@ -91,7 +91,7 @@
               <div class="border-top col p-0 mx-2 border-gray-3600"></div>
             </div>
             <div class="row">
-              <% Category.cate_show("highlight").last.posts.limit(5).each do |post|%>
+              <% @post_highlight.each do |post|%>
                 <div class="col-lg-6 col-xl-12">
                   <div class="row no-gutters border-bottom mb-4 pb-4">
                     <div class="col-md-4">

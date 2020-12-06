@@ -1,0 +1,121 @@
+<section class="blog-post-tab-with-Sidebar mb-xl-5">
+  <div class="container px-md-5">
+    <div>
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="mb-5 mb-xl-0">
+            <div class="text-center tab-nav__v5">
+              <ul class="nav mb-4 pb-1 overflow-auto flex-nowrap flex-md-wrap" role="tablist">
+                <% @categories_tab.each_with_index do |category, index| %>
+                	<li class="nav-item flex-shrink-0 flex-shrink-md-1">
+	                  <a class="nav-link <%= 'active' if index == 0 %>" id="category-<%= index %>-tab" data-toggle="pill" href="#category-<%= index %>" role="tab" aria-controls="category-<%= index %>" aria-selected="true">
+	                    <%= category.title %>
+	                  </a>
+	                </li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="tab-content">
+            	<% @categories_tab.each_with_index do |category, index| %>
+	              <div class="tab-pane <%= 'fade show active' if index == 0 %>" id="category-<%= index %>" role="tabpanel" aria-labelledby="category-<%= index %>-tab">
+	              	<% category.posts.order(created_at: :desc).limit(1).each do |post| %>
+		              	<div class="mb-7">
+		                  <%= link_to post_path(post), class: "d-block mb-2 pb-2" do %>
+		                  	<%= image_tag(post.banner_cover, class: "img-fluid lazy-load", alt: "ảnh bìa #{post.name}") %>
+		                  <% end %>
+		                  <h5 class="product_title font-size-26 font-weight-semi-bold font-secondary text-lh-1 mb-md-0">
+	                     	<%= link_to post_path(post) do %>
+                          <span><%= post.name %></span>
+                        <% end %>
+		                  </h5>
+		                  <div class="mb-2 pb-1">
+		                    <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
+                          <span><%= post.author.name %></span>
+                        <% end %>
+		                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+                          <span><i class="far fa-clock"></i> <%= post.created_at.strftime(Settings.date.formats) %></span>
+                        </a>
+                        <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+                          <span><i class="far fa-eye"></i> <%= post.page_view %> lượt xem</span>
+                        </a>
+		                  </div>
+		                  <p class="font-size-1 mb-0">
+		                    <%= post.description %>
+		                  </p>
+		                </div>
+		              <% end %>
+
+	                <% category.posts.order(created_at: :desc).offset(1).limit(5).each do |post| %>
+	                	<div class="row mb-5">
+	                    <div class="col-xl-4">
+	                      <%= link_to post_path(post), class: "d-block mb-3 mb-xl-0" do %>
+			                  	<%= image_tag(post.banner_cover, class: "img-fluid lazy-load", alt: "ảnh bìa #{post.name}") %>
+			                  <% end %>
+	                    </div>
+	                    <div class="col-xl-8">
+	                      <h6 class="product_title font-size-22 font-weight-semi-bold font-secondary mb-0">
+	                        <%= link_to post_path(post) do %>
+	                          <span><%= post.name %></span>
+	                        <% end %>
+	                      </h6>
+	                      <div class="mb-2 pb-1">
+	                        <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
+	                          <span><%= post.author.name %></span>
+	                        <% end %>
+													<a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+	                          <span><i class="far fa-clock"></i> <%= post.created_at.strftime(Settings.date.formats) %></span>
+	                        </a>
+	                        <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+	                          <span><i class="far fa-eye"></i> <%= post.page_view %> lượt xem</span>
+	                        </a>
+	                      </div>
+	                      <p class="font-size-1 mb-0">
+	                       	<%= post.description %>
+	                      </p>
+	                    </div>
+	                  </div>
+	                <% end %>
+	              </div>
+	            <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pl-lg-6">
+            <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
+              <h5 class="font-size-24 font-weight-medium font-secondary mb-0">Bài viết nổi bật</h5>
+              <div class="border-top col p-0 mx-2 border-gray-3600"></div>
+              <%= link_to category_path(Category.cate_show("highlight").last.posts.first.category), class: "h-g-primary font-size-1 font-weight-medium font-secondary" do %>
+                Xem tất cả
+              <% end %>
+            </div>
+            <div class="mb-3">
+            	<% @post_highlight.each do |post| %>
+	              <div class="position-relative mb-5">
+	                <div class="bg-img-hero bg-gradient__1" style="background-image: url('<%= url_for(post.banner_cover) %>'); height: 210px;">
+	                  <div class="position-absolute bottom-0 z-index-2 pl-3 pr-7 mb-3">
+	                    <h6 class="product--title font-size-18 text-lh-1dot3 font-weight-semi-bold font-secondary">
+	                    	<%= link_to post.name, post_path(post) %>
+	                    </h6>
+	                    <div class="text-lh-sm">
+	                      <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
+		                      <span><i class="fas fa-user-edit"></i> <%= post.author.name %></span>
+		                    <% end %>
+		                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+		                      <span><i class="far fa-clock"></i> <%= post.created_at.strftime(Settings.date.formats) %></span>
+		                    </a>
+		                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+		                      <span><i class="far fa-eye"></i> <%= post.page_view %> lượt xem</span>
+		                    </a>
+	                    </div>
+	                  </div>
+	                </div>
+	              </div>
+	            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
