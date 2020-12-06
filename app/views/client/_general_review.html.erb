@@ -3,11 +3,11 @@
     <div class="mx-md-1">
       <div class="row">
         <div class="col-lg-12">
-          <div class="mb-5 mb-lg-0">
+          <div class="mb-lg-3">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
               <h5 class="font-size-24 font-weight-medium font-secondary mb-0">Sách hay mới nhất</h5>
               <div class="border-top col p-0 mx-3 border-gray-3600"></div>
-              <%= link_to posts_path, class: "h-g-primary font-size-1 font-weight-medium font-secondary" do %>
+              <%= link_to category_path(@post_new_general.category), class: "h-g-primary font-size-1 font-weight-medium font-secondary" do %>
                 Xem tất cả
               <% end %>
             </div>
@@ -24,10 +24,13 @@
                   </h6>
                   <div class="mb-2 pb-1">
                     <%= link_to author_path(@post_new_general.author), class: "font-weight-bold font-size-13" do %>
-                      <span><%= @post_new_general.author.name %></span>
+                      <span><i class="fas fa-user-edit"></i> <%= @post_new_general.author.name %></span>
                     <% end %>
-                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span><%= @post_new_general.created_at.strftime(Settings.date.formats) %></span>
+                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+                      <span><i class="far fa-clock"></i> <%= @post_new_general.created_at.strftime(Settings.date.formats) %></span>
+                    </a>
+                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+                      <span><i class="far fa-eye"></i> <%= @post_new_general.page_view %> lượt xem</span>
                     </a>
                   </div>
                   <p class="font-size-1 mb-0">
@@ -42,18 +45,21 @@
                       <%= image_tag(post.highlight_image, class: "img-fluid lazy-header", alt: "Ảnh bìa #{post.name}") %>
                     <% end %>
                     <div class="ml-md-3 col-xl-6 pd-0">
-                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                        <%= link_to post_path(post) do %>
-                          <%= post.name %>
+                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-0">
+                        <%= link_to post_path(post), title: "#{post.name}" do %>
+                          <%= truncate(post.name, length: 35) %>
                         <% end %>
                       </h6>
-                      <div class="mb-2 pb-1">
+                      <div>
                         <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
                           <span><%= post.author.name %></span>
                         <% end %>
-                        <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                          <span><%= post.created_at.strftime(Settings.date.formats) %></span>
-                        </a>
+                        <p class="post-date font-weight-normal font-size-13 h-g-primary">
+                          <span><i class="far fa-clock"></i> <%= post.created_at.strftime(Settings.date.formats) %></span>
+                        </p>
+                        <p class="post-view font-weight-normal font-size-13 h-g-primary">
+                          <span><i class="far fa-eye"></i> <%= post.page_view %> lượt xem</span>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -66,18 +72,21 @@
                       <%= image_tag(post.highlight_image, class: "img-fluid lazy-header", alt: "Ảnh bìa #{post.name}") %>
                     <% end %>
                     <div class="ml-md-3 col-xl-6 pd-0">
-                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-1">
-                        <%= link_to post_path(post) do %>
-                          <%= post.name %>
+                      <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary text-lh-1dot25 mb-0">
+                        <%= link_to post_path(post), title: "#{post.name}" do %>
+                          <%= truncate(post.name, length: 35) %>
                         <% end %>
                       </h6>
-                      <div class="mb-2 pb-1">
+                      <div>
                         <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
                           <span><%= post.author.name %></span>
                         <% end %>
-                        <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                          <span><%= post.created_at.strftime(Settings.date.formats) %></span>
-                        </a>
+                        <p class="post-date font-weight-normal font-size-13 h-g-primary">
+                          <span><i class="far fa-clock"></i> <%= post.created_at.strftime(Settings.date.formats) %></span>
+                        </p>
+                        <p class="post-view font-weight-normal font-size-13 h-g-primary">
+                          <span><i class="far fa-eye"></i> <%= post.page_view %> lượt xem</span>
+                        </p>
                       </div>
                     </div>
                   </div>

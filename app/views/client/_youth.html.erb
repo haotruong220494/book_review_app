@@ -1,0 +1,62 @@
+<section class="tab-slick mb-6 mb-lg-7">
+  <div class="bg-gray-2000 space-top-1 space-bottom-2">
+    <div class="container px-md-5">
+      <div class="mx-md-1 pt-4 pb-1">
+        <h6 class="display-11 text-lh-1dot3 font-weight-semi-bold text-center text-white">Những Cuốn Sách Cho Năm Tháng Thanh Xuân</h6>
+        <div class="tab-content u-slick__tab pt-4">
+          <div
+            class="js-slick-carousel slick slick-gutters-2 dark"
+            data-hs-slick-carousel-options='{
+              "prevArrow": "<span class=\"fas fa-chevron-left slick-arrow slick-arrow-v3 slick-arrow-centered-y left slick-arrow-right rounded-circle left-0 ml-lg-n3 ml-wd-n6\"></span>",
+              "nextArrow": "<span class=\"fas fa-chevron-right slick-arrow slick-arrow-v3 slick-arrow-centered-y right slick-arrow-right rounded-circle mr-lg-n3 mr-wd-n6\"></span>",
+              "slidesToShow": 7,
+              "responsive": [{
+                "breakpoint": 1200,
+                "settings": {
+                    "slidesToShow": 5
+                }
+              }, {
+                "breakpoint": 992,
+                "settings": {
+                    "slidesToShow": 3
+                }
+              }, {
+                "breakpoint": 768,
+                "settings": {
+                    "slidesToShow": 2
+                }
+              }]
+            }'
+          >
+          	<% @posts_youth.each do |post| %>
+	            <div class="product mt-2">
+	              <div class="product-image mb-2">
+	                <%= link_to post_path(post), class: "d-inline-block position-relative stretched-link" do %>
+	                	<% if post.tag %>
+		                	<span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">
+		                		<%= post.tag %>
+		                	</span>
+	                	<% end %>
+	                	<img class="img-fluid" src="<%= url_for(post.image_cover) %>" alt="ảnh bìa <%= post.name %>" />
+	                <% end %>
+	              </div>
+	              <div class="product-meta font-size-12 mb-1">
+	                <span>
+	                	<%= link_to author_path(post.author), class: "h-g-primary" do %>
+	                		<%= post.author.name %>
+	                	<% end %>
+	                </span>
+	              </div>
+	              <div class="product-title font-weight-bold font-size-1">
+	              	<%= link_to post_path(post) do %>
+	              		<%= post.name %>
+	              	<% end %>
+	              </div>
+	            </div>
+	          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
