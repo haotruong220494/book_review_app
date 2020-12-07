@@ -20,10 +20,13 @@
           </h6>
           <div class="mb-3 pb-1">
             <a href="" class="font-weight-semi-bold font-size-13">
-              <span><%= @post.author.name %></span>
+              <span><i class="fas fa-user-edit"></i> <%= @post.author.name %></span>
             </a>
             <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-              <span><%= @post.created_at.strftime(Settings.date.formats) %></span>
+              <span><i class="far fa-clock"></i> <%= @post.created_at.strftime(Settings.date.formats) %></span>
+            </a>
+            <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+              <span><i class="far fa-eye"></i> <%= @post.page_view %> lượt xem</span>
             </a>
           </div>
           <p class="font-size-15 font-weight-bold mb-3 pb-1">
@@ -98,17 +101,20 @@
                 <div class="px-md-3">
                   <h6 class="product-title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
                     <%= link_to post_path(post) do %>
-                      <%= post.name %>
+                      <%= truncate(post.name, length: 50) %>
                     <% end %>
                   </h6>
                   <div class="d-flex align-items-center">
-                    <div class="text-lh-1dot1 font-size-13 font-weight-bold">
-                      <span><%= @post.account.name %></span>
-                    </div>
                     <div>
-                      <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                        <span><%= @post.created_at.strftime(Settings.date.formats) %></span>
-                      </a>
+                      <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
+                        <span><%= post.author.name %></span>
+                      <% end %>
+                      <p class="post-date font-weight-normal font-size-13 h-g-primary">
+                        <span><i class="far fa-clock"></i> <%= post.created_at.strftime(Settings.date.formats) %></span>
+                      </p>
+                      <p class="post-view font-weight-normal font-size-13 h-g-primary">
+                        <span><i class="far fa-eye"></i> <%= post.page_view %> lượt xem</span>
+                      </p>
                     </div>
                   </div>
                 </div>

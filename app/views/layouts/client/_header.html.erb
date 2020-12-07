@@ -87,7 +87,7 @@
                                   <% end %>
                                 </span>
                                 <span>
-                                  <a class="h-g-primary" href="javascript:;">xuất bản: <%= post_today.release_date %></a>
+                                  <a class="h-g-primary" href="javascript:;"><%= post_today.created_at.strftime(Settings.date.formats) %></a>
                                 </span>
                               </div>
                               <p class="text-gray-7100 font-size-13 line-clamp-5">
@@ -111,7 +111,7 @@
                             Có thể bạn quan tâm
                           </div>
                           <ul class="column-count-6 v2 list-unstyled mb-0">
-                            <% colllection_header.each do |post| %>
+                            <% interested_post.each do |post| %>
                               <li class="py-1">
                                 <%= link_to post_path(post), class: "h-b-primary py-1 font-size-14" do %>
                                   <%= image_tag(post.image_cover, class: "img-fluid w-100 lazy-header", alt: "Image cover #{post.name}") %>

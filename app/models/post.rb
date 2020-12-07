@@ -27,11 +27,7 @@ class Post < ApplicationRecord
   before_save :to_slug
   after_save :update_rank_account
 
-  scope :show_post_head, -> { order("created_at DESC").limit(4) }
-  scope :show_post_body, -> { order("created_at DESC").offset(4) }
-  scope :show_post_new_first, -> { order("created_at DESC").limit(1) }
-  scope :show_post_news, -> { order("created_at DESC").offset(1).limit(2) }
-  scope :show_post_views, -> { order("created_at DESC").limit(9) }
+  scope :show_post_head, -> { order("page_view DESC").limit(4) }
 
   def to_param
     "#{to_slug}#{id}"

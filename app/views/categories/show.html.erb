@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<section class="blog-post mb-7">
+<section class="blog-post mb-lg-7">
   <div class="container px-md-5">
     <div class="mx-md-1">
       <div class="row mb-5 mt-n7">
@@ -38,8 +38,15 @@
                     <%= post.name %>
                   <% end %>
                 </h6>
-                <a class="font-size-13 font-weight-bold" href=""><%= post.author.name %></a>
-                <a class="product-comment font-weight-normal font-size-13 font-italic h-g-primary" href="javascript:;"><%= post.created_at.strftime(Settings.date.formats) %></a>
+                <a class="font-size-13 font-weight-bold" href="">
+                  <span><i class="fas fa-user-edit"></i> <%= post.author.name %>  </span>
+                </a>
+                <a class="product-comment font-weight-normal font-size-13 font-italic h-g-primary" href="javascript:;">
+                  <span><i class="far fa-clock"></i> <%= post.created_at.strftime(Settings.date.formats) %></span>
+                </a>
+                <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+                  <span><i class="far fa-eye"></i> <%= post.page_view %> lượt xem</span>
+                </a>
               </div>
             </div>
           </div>
@@ -49,13 +56,13 @@
   </div>
 </section>
 
-<section class="blog-post-tab-with-Sidebar mb-7 mb-xl-14">
+<section class="blog-post-tab-with-Sidebar mb-lg-7">
   <div class="container px-md-5">
     <div>
       <div class="row">
         <div class="col-xl-9">
           <div class="mb-5 mb-xl-0">
-            <% @category.posts.show_post_body.each do |post| %>
+            <% @posts.each do |post| %>
               <div class="row mb-4">
                 <div class="col-lg-6">
                   <%= link_to post_path(post), class: "d-block mb-3 mb-lg-0" do %>
@@ -69,11 +76,14 @@
                     <% end %>
                   </h6>
                   <div class="mb-2 pb-1">
-                    <a href="" class="font-weight-bold font-size-13">
-                      <span><%= post.author.name %></span>
+                    <%= link_to author_path(post.author), class: "font-weight-bold font-size-13" do %>
+                      <span><i class="fas fa-user-edit"></i> <%= post.author.name %></span>
+                    <% end %>
+                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+                      <span><i class="far fa-clock"></i> <%= post.created_at.strftime(Settings.date.formats) %></span>
                     </a>
-                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
-                      <span><%= post.created_at.strftime(Settings.date.formats) %></span>
+                    <a href="javascript:;" class="product-comment font-weight-normal font-size-13 h-g-primary">
+                      <span><i class="far fa-eye"></i> <%= post.page_view %> lượt xem</span>
                     </a>
                   </div>
                   <p class="font-size-1 mb-0 pr-lg-7">
@@ -82,6 +92,7 @@
                 </div>
               </div>
             <% end %>
+            <%= paginate @posts, theme: "front" %>
           </div>
         </div>
         <div class="col-xl-3">

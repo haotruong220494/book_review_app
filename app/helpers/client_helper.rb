@@ -11,7 +11,7 @@ module ClientHelper
 		Category.cate_show("tips").last.posts
 	end
 
-	def colllection_header
-		Category.cate_show("collection").last.posts.limit(6)
+	def interested_post
+		Category.cate_show("interested").last.posts.limit(6)
 	end
 end	

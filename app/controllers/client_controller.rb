@@ -14,7 +14,7 @@ class ClientController < ApplicationController
     @posts_youth = Category.cate_show("youth").last.posts.order(created_at: :desc)
 
     # BÀI VIẾT NỔI BẬT
-    @post_highlight = Category.cate_show("highlight").last.posts.order(created_at: :desc).limit(3)
+    @post_highlight = Category.cate_show("highlight").last.posts.order(created_at: :desc).limit(5)
 
     # TAB
     @categories_tab = Category.cate_show("header")
