@@ -45,7 +45,7 @@
 		                </div>
 		              <% end %>
 
-	                <% category.posts.order(created_at: :desc).offset(1).limit(5).each do |post| %>
+	                <% category.posts.order(created_at: :desc).offset(1).limit(4).each do |post| %>
 	                	<div class="row mb-5">
 	                    <div class="col-xl-4">
 	                      <%= link_to post_path(post), class: "d-block mb-3 mb-xl-0" do %>

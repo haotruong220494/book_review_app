@@ -2,6 +2,7 @@ per_page:
   default: 6
   client: 5
   account: 5
+  post_in_cate: 3
 date:
   formats: "%d/%m/%Y"
 time:
