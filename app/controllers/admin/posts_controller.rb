@@ -26,7 +26,7 @@ class Admin::PostsController < Admin::BaseController
   def update
     if @post.update_attributes params_post
       flash[:success] = "Update post success!"
-      redirect_to admin_posts_path
+      redirect_to admin_posts_path(page: params[:page])
     else
       render "edit"
     end
