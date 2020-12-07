@@ -10,7 +10,7 @@
   <td style="width: 10%"><%= post.account && post.account.name %></td>
   <td style="width: 10%"><%= post.author && post.author.name %></td>
   <td class="action-article" style="width: 10%;">
-    <%= link_to edit_admin_post_path(post) do %>
+    <%= link_to edit_admin_post_path(post, page: params["page"]) do %>
       <%= content_tag :i, "", class: "far fa-edit text-info" %>
     <% end %>
     <%= link_to admin_post_path(post), method: :delete, data: { confirm: "You sure?" } do %>
