@@ -21,7 +21,7 @@
 	              	<% category.posts.order(created_at: :desc).limit(1).each do |post| %>
 		              	<div class="mb-7">
 		                  <%= link_to post_path(post), class: "d-block mb-2 pb-2" do %>
-		                  	<%= image_tag(post.banner_cover, class: "img-fluid lazy-load", alt: "ảnh bìa #{post.name}") %>
+		                  	<%= image_tag(post.banner_cover, class: "img-fluid #{index == 0 ? 'lazy-load' : 'lazy-header'}", alt: "ảnh bìa #{post.name}") %>
 		                  <% end %>
 		                  <h5 class="product_title font-size-26 font-weight-semi-bold font-secondary text-lh-1 mb-md-0">
 	                     	<%= link_to post_path(post) do %>
@@ -49,7 +49,7 @@
 	                	<div class="row mb-5">
 	                    <div class="col-xl-4">
 	                      <%= link_to post_path(post), class: "d-block mb-3 mb-xl-0" do %>
-			                  	<%= image_tag(post.banner_cover, class: "img-fluid lazy-load", alt: "ảnh bìa #{post.name}") %>
+			                  	<%= image_tag(post.banner_cover, class: "img-fluid #{index == 0 ? 'lazy-load' : 'lazy-header'}", alt: "ảnh bìa #{post.name}") %>
 			                  <% end %>
 	                    </div>
 	                    <div class="col-xl-8">
@@ -75,6 +75,12 @@
 	                    </div>
 	                  </div>
 	                <% end %>
+                  <div class="space-1 position-relative d-flex">
+                    <%= link_to category_path(category), class: "btn btn-outline-1 mx-auto px-7 py-3 font-size-1 z-index-2 font-weight-medium font-secondary" do %>
+                      + Xem thêm
+                    <% end %>
+                    <div class="border-top content-centered w-100 border-gray-1300"></div>
+                  </div>
 	              </div>
 	            <% end %>
             </div>
