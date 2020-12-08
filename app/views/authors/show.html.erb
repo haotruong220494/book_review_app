@@ -65,7 +65,7 @@
               <div class="border-top col p-0 mx-2 border-gray-3600"></div>
             </div>
             <div class="row">
-              <% Category.cate_show("highlight").last.posts.limit(5).each do |post|%>
+              <% @post_highlight.each do |post|%>
                 <div class="col-lg-6 col-xl-12">
                   <div class="row no-gutters border-bottom mb-4 pb-4">
                     <div class="col-md-4">
@@ -77,7 +77,7 @@
                       <div class="ml-md-3">
                         <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
                           <%= link_to post_path(post) do %>
-                            <%= post.name %>
+                            <%= truncate(post.name, length: 35) %>
                           <% end %>
                         </h6>
                         <div class="d-flex align-items-center d-xl-block">
