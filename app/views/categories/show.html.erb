@@ -114,7 +114,7 @@
                       <div class="ml-md-3">
                         <h6 class="product_title font-size-17 font-weight-semi-bold font-secondary mb-0 mt-3 mt-md-0">
                           <%= link_to post_path(post) do %>
-                            <%= post.name %>
+                            <%= truncate(post.name, length: 35) %>
                           <% end %>
                         </h6>
                         <div class="d-flex align-items-center d-xl-block">
