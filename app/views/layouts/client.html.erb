@@ -126,7 +126,6 @@
   <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   <script>
     $(document).on("ready", function () {
-      document.addEventListener('touchstart', onTouchStart, {passive: true});
       // initialization of header
       var header = new HSHeader($("#header")).init();
 
