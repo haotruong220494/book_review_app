@@ -15,7 +15,7 @@ class Author < ApplicationRecord
 
   def to_slug
     if slug.blank?
-      self.slug = self.title.to_s.parameterize
+      self.slug = self.name.to_s.parameterize
     else
       self.slug = self.slug.to_s.parameterize
     end

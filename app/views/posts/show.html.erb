@@ -1,5 +1,5 @@
 <%= provide :title, "Reivew " + @post.name.downcase  %>
-<%= provide :image, asset_path('kenhdoc.jpg') %>
+<%= provide :image, url_for(@post.image_share) %>
 <%= content_for :breadcum_first, "Trang chủ" %>
 <%= content_for :breadcum_first_link, root_path %>
 <%= content_for :breadcum_second, @post.category.title %>
@@ -19,9 +19,9 @@
             <%= @post.name %>
           </h6>
           <div class="mb-3 pb-1">
-            <a href="" class="font-weight-semi-bold font-size-13">
-              <span><i class="fas fa-user-edit"></i> <%= @post.author.name %></span>
-            </a>
+            <%= link_to author_path(@post.author), class: "font-weight-semi-bold font-size-13" do %>
+              <span><i class="fas fa-user-edit"></i><%= @post.author.name %></span>
+            <% end %>
             <a href="javascript:;" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
               <span><i class="far fa-clock"></i> <%= @post.created_at.strftime(Settings.date.formats) %></span>
             </a>
