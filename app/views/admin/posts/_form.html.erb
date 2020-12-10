@@ -104,7 +104,7 @@
         </div>
         <div class="form-group custom-file mb-3">
           <div class="row">
-            <label>Image cover (174*260)</label>
+            <label>Ảnh bìa (174*260)</label>
             <% if @post.image_cover.attached? %>
               <div class="image-cover col-md-12">
                 <img src="<%= (url_for(@post.image_cover)) %>">
@@ -124,7 +124,7 @@
         </div>
         <div class="form-group custom-file mb-3">
           <div class="row">
-            <label>Image cover in page cate (480*270)</label>
+            <label>Ảnh bìa hiển thị ở màn phần bài viết liên quan (480*270)</label>
             <% if @post.image_cover_cate.attached? %>
               <div class="image-cover col-md-12">
                 <img src="<%= (url_for(@post.image_cover_cate)) %>">
@@ -144,7 +144,7 @@
         </div>
         <div class="form-group custom-file mb-3">
           <div class="row">
-            <label>Banner cover (990*440)</label>
+            <label>Ảnh banner đầu trang (990*440)</label>
             <% if @post.banner_cover.attached? %>
               <div class="image-cover col-md-12">
                 <img src="<%= (url_for(@post.banner_cover)) %>">
@@ -164,7 +164,7 @@
         </div>
         <div class="form-group custom-file mb-3">
           <div class="row">
-            <label>Image thumb slider (204*120)</label>
+            <label>Ảnh thumb slider (204*120)</label>
             <% if @post.thumb_slider_image.attached? %>
               <div class="image-cover col-md-12">
                 <img src="<%= (url_for(@post.thumb_slider_image)) %>">
@@ -184,7 +184,7 @@
         </div>
         <div class="form-group custom-file mb-3">
           <div class="row">
-            <label>Background slider (1920*676)</label>
+            <label>Ảnh slider (1920*676)</label>
             <% if @post.bg_slider_image.attached? %>
               <div class="image-cover col-md-12">
                 <img src="<%= (url_for(@post.bg_slider_image)) %>">
@@ -236,6 +236,26 @@
               <div class="col-md-12">
                 <div>
                   <%= f.file_field :highlight_image, accept: ".jpg,.jpeg,.gif,.png", class: "custom-file-input", id: "customFile" %>
+                  <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div> 
+        <div class="form-group custom-file mb-3">
+          <div class="row">
+            <label>Ảnh chia sẻ lên fb (1200*630)</label>
+            <% if @post.image_share.attached? %>
+              <div class="image-cover col-md-12">
+                <img src="<%= (url_for(@post.image_share)) %>">
+                <%= link_to 'Remove before change', delete_image_attachment_admin_post_url(@post.image_share.id),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% else %>
+              <div class="col-md-12">
+                <div>
+                  <%= f.file_field :image_share, accept: ".jpg,.jpeg,.gif,.png", class: "custom-file-input", id: "customFile" %>
                   <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 <%= provide :title, @category.title  %>
-<%= provide :image, asset_path('kenhdoc.jpg') %>
+<%= provide :image, url_for(@category.image_share) %>
 
 <div class="bg-img-hero"
   <% if @category.banner_cover.attached? %>

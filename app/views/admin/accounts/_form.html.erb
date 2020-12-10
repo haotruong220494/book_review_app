@@ -14,6 +14,20 @@
               autofocus: true, disabled: true %>
           </div>
         </div>
+         <div class="form-group slug-group">
+            <%= f.label :slug, class: "col-md-4 control-label" %>
+            <div class="row">
+              <div class="col-md-11">
+                <%= f.input :slug, as: :string,
+                  input_html: { class: "form-control input-circle input-slug", placeholder: "Slug" },
+                  label: false,
+                  autofocus: true %>
+              </div>
+              <div class="col-md-1">
+                <button type="button" class="btn btn-outline-secondary change-slug">Change slug</button>
+              </div>
+            </div>
+          </div>
         <div class="form-group custom-file mb-3">
           <div class="row">
             <label>Cover (1920*400)</label>

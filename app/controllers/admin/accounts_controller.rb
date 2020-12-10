@@ -32,7 +32,7 @@ class Admin::AccountsController < Admin::BaseController
 
   private
   def load_account
-    @account = Account.find_by_id params[:id]
+    @account = Account.find_by_id params[:id].delete("^0-9").to_i
   end
 
   def params_category

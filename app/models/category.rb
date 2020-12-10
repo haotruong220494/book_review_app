@@ -1,11 +1,13 @@
 class Category < ApplicationRecord
-  ATTRS = [:title, :slug, :description, :image, :banner_cover, :location]
+  ATTRS = [:title, :slug, :description, :image, :banner_cover, :image_share, :location]
 
   has_many :posts, dependent: :destroy
   has_one :image
   has_one :banner_cover
+  has_one :image_share
   has_one_attached :image
   has_one_attached :banner_cover
+  has_one_attached :image_share
 
   validates :title, :description, presence: true
   before_save :to_slug

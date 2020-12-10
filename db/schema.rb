@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_181952) do
+ActiveRecord::Schema.define(version: 2020_12_10_150614) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_181952) do
     t.string "insta_link"
     t.integer "rank", default: 1
     t.string "image_cover"
+    t.string "slug"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
@@ -96,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_181952) do
     t.datetime "updated_at", null: false
     t.string "banner_cover"
     t.string "location"
+    t.string "image_share"
   end
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_181952) do
     t.bigint "author_id"
     t.string "image_general"
     t.string "page_view"
+    t.string "image_share"
     t.index ["account_id"], name: "index_posts_on_account_id"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
