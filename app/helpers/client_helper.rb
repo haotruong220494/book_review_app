@@ -14,4 +14,8 @@ module ClientHelper
 	def interested_post
 		Category.cate_show("interested").last.posts.limit(6)
 	end
+
+	def vouchers_header
+		Category.cate_show("vouchers").last.posts.limit(6)
+	end
 end	
