@@ -6,9 +6,9 @@ class ClientController < ApplicationController
   	@posts_slider = Category.cate_show("collection").last.posts
 
     # SÁCH HAY MỚI NHẤT
-    @post_new_general = Category.cate_show("general").last.posts.order(created_at: :desc).first
-    @post_new_nth_general = Category.cate_show("general").last.posts.order(created_at: :desc).offset(1).limit(5)
-    @post_new_last_general = Category.cate_show("general").last.posts.order(created_at: :desc).offset(6).limit(5)
+    @post_new_general = Post.order(created_at: :desc).first
+    @post_new_nth_general = Post.order(created_at: :desc).offset(1).limit(5)
+    @post_new_last_general = Post.order(created_at: :desc).offset(6).limit(5)
 
     # TUỔI TRẺ
     @posts_youth = Category.cate_show("youth").last.posts.order(created_at: :desc)
