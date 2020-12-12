@@ -148,6 +148,28 @@
                   <% end %>
                 </div>
               </li>
+
+              <li class="hs-has-sub-menu navbar-nav-item">
+                <a id="docsMegaMenu" class="hs-mega-menu-invoker nav-link nav-link-toggle font-secondary" href="javascript:;" aria-haspopup="true" aria-expanded="false">Ở đây có khuyến mại</a>
+                <div class="hs-sub-menu dropdown-menu mega-menu-sub-menu-md" aria-labelledby="docsMegaMenu">
+                  <% vouchers_header.each do |post|%>
+                  <div class="navbar-promo-item">
+                    <%= link_to post_path(post), class: "navbar-promo-link" do %>
+                      <div class="media align-items-center">
+                        <i class="fas fa-money-check-alt font-size-34 mr-2d"></i>
+                        <div class="media-body">
+                          <span class="navbar-promo-title">
+                            <%= post.name %>
+                            <span class="badge badge-primary badge-pill ml-1">voucher</span>
+                          </span>
+                          <small class="navbar-promo-text"><%= post.description %></small>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                  <% end %>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
