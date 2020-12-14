@@ -12,8 +12,8 @@
   <meta name="description" content="Review Sách - Kênh Đọc, Nơi chia sẻ với độc giả những cuốn sách hay, mang lại nhiều giá trị nhân văn, các tác phẩm kinh điển và đang được bán chạy">
   <meta name="Keywords" content="review sách">
   <meta name="author" content="Kênh Đọc | Review Sách Hay">
-  <meta name="robots" content="index, archive, follow, noodp">
-  <meta name="googlebot" content="index,archive,follow,noodp">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex,nofollow">
   <meta name="msnbot" content="all,index,follow">
   <meta property="og:title" content="<%= yield(:title) %> | Kênh đọc - trang đánh giá sách hay nhất nên đọc">
   <meta property="og:description" content="Review Sách - Kênh Đọc, Nơi chia sẻ với độc giả những cuốn sách hay, mang lại nhiều giá trị nhân văn, các tác phẩm kinh điển và đang được bán chạy">
@@ -71,7 +71,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   <script>
     (function() {
-      var supportsPassive = eventListenerOptionsSupported();  
+      var supportsPassive = eventListenerOptionsSupported();
 
       if (supportsPassive) {
         var addEvent = EventTarget.prototype.addEventListener;
